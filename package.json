@@ -10,7 +10,8 @@
     "netlify:dev": "netlify dev"
   },
   "dependencies": {
-    "@netlify/blobs": "^8.2.0"
+    "@netlify/blobs": "^8.2.0",
+    "@vercel/kv": "^3.0.0"
   },
   "keywords": [
     "cyber",
