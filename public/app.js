@@ -93,7 +93,8 @@ function renderSite(site) {
 }
 
 async function loadSite() {
-  const response = await fetch("/api/site");
+  let response = await fetch("/api/site");
+  if (!response.ok) response = await fetch("/site-data.json");
   const site = await response.json();
   renderSite(site);
 }

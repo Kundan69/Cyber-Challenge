@@ -87,7 +87,8 @@ function renderChallenge(challenge) {
 
 async function loadChallenge() {
   const slug = new URLSearchParams(window.location.search).get("id");
-  const response = await fetch("/api/site");
+  let response = await fetch("/api/site");
+  if (!response.ok) response = await fetch("/site-data.json");
   const site = await response.json();
   const challenge = site.challenges.find((item) => slugify(item.title) === slug);
 

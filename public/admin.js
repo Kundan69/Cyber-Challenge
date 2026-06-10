@@ -9,7 +9,8 @@ async function ensureAdmin() {
 }
 
 async function loadCms() {
-  const response = await fetch("/api/site");
+  let response = await fetch("/api/site");
+  if (!response.ok) response = await fetch("/site-data.json");
   const site = await response.json();
   editor.value = JSON.stringify(site, null, 2);
 }

@@ -1,0 +1,378 @@
+{
+  "brand": {
+    "name": "Cyber Challenge India",
+    "tagline": "Defend - Innovate - Secure",
+    "badge": "National Cyber Hackathon Platform",
+    "headline": "Build. Break. Defend.",
+    "summary": "A professional hackathon arena for cybersecurity, defence-AI, digital policing and public-safety innovation across India's active Cyber Challenge programs."
+  },
+  "stats": [
+    { "value": "5", "label": "Active Challenge Pages" },
+    { "value": "3", "label": "Major Tracks" },
+    { "value": "36h", "label": "Finale Sprints" }
+  ],
+  "challenges": [
+    {
+      "title": "Terrier Cyber Quest 2025",
+      "summary": "75 Years of Territorial Army",
+      "category": "Indian Army",
+      "status": "Registration Closed",
+      "date": "2025-09-14",
+      "location": "New Delhi",
+      "theme": "terrier",
+      "logo": "/assets/doc-logos/doc-logo-02.png",
+      "overview": "Building on the tremendous success of Terrier Cyber Quest 1.0, the Indian Army Terrier Cyber Quest 2.0 aims to delve deeper into fostering innovation and collaboration in critical domains like securing emerging technologies like drone technology, AI/ML, Quantum etc. With an expanded scope and challenging tracks, this phase continues the journey to unite India's brightest minds from academia, industry, and government to address modern defense challenges through technology.",
+      "tracks": ["Bug Hunting", "Datathon"],
+      "deliverables": ["CTF elimination round", "36-hour in-person live bug hunt", "Proof-of-Concept document", "Prototype development and final presentation"],
+      "highlights": ["Announcement: July 23rd, 2025", "Registrations: July 23rd - September 14th, 2025", "Shortlisting: September 15th - 23rd, 2025", "Grand Finale: October 6th - 7th, 2025", "Award Ceremony: October 9th, 2025"],
+      "contentSections": [
+        {
+          "title": "Challenge Yourself",
+          "paragraphs": ["Indian Army Terrier Cyber Quest 2025 will have two tracks:"]
+        },
+        {
+          "title": "Track 1 - Bug Hunting",
+          "paragraphs": [
+            "A race against the clock in a high-stakes cybersecurity hackathon-starting with a CTF and culminating in a 36-hour live bug hunt in a customized environment. Finalists will dig deep to uncover vulnerabilities in a simulated Indian Army environment.",
+            "Registration Closed"
+          ]
+        },
+        {
+          "title": "Registration",
+          "paragraphs": ["Registration for Terrier Cyber Quest 2025 begins on July 23rd, 2025. Participants can register individually or in teams of up to three members. To strengthen their application, participants are encouraged to share links to certifications or badges earned in the cybersecurity domain."]
+        },
+        {
+          "title": "Shortlisting",
+          "paragraphs": ["A 8-10 hour virtual elimination round will be conducted in this track. Teams/Participants will be provided with a link to the CTF Portal, where they will be competing against each other."],
+          "items": [
+            "It will be a short Capture the Flag (CTF) event.",
+            "Participants will be provided with puzzles/programs/system/files containing security vulnerabilities.",
+            "Each puzzle has a secret key called a 'flag' embedded within it. Finding the flag proves that participants have solved the particular challenge, and submitting the flag earns points.",
+            "Each problem statement has its own points, which depend on the difficulty of the problem.",
+            "The scoring procedure depends on how many points participants have earned and how much time they have taken to submit the flags.",
+            "Participants also may be asked to submit a Proof-of-Concept document after this phase.",
+            "Top 10 teams/participants on the leadership board will be selected as the finalists for this track."
+          ]
+        },
+        {
+          "title": "Grand Finale",
+          "paragraphs": ["The Grand Finale will be a 36-hour in-person challenge, where the top 10 shortlisted participants/teams will be invited to compete. In this intensive round, participants will engage in live bug hunting within a secure, controlled environment designed to simulate real-world conditions. The target environment will reflect a customized system stack used in national infrastructure. Participants will be required to identify and document vulnerabilities. The setup may include elements inspired by specific organizational use cases and configurations, with dummy data mimicking operational scenarios-ensuring a safe yet realistic experience. Points will be awarded based on the severity, originality, and complexity of the bugs found. A panel of experts will verify the discovered bugs and determine the final scores after the Grand finale round gets over. The top 3 participants/teams will be declared winners based on their cumulative performance."]
+        },
+        {
+          "title": "Track 2",
+          "paragraphs": [
+            "Shortlisting Round of Track 1 - Bug Hunting is now LIVE!.",
+            "The competition has officially commenced, and we extend our best wishes to all participants.",
+            "In addition, the shortlisting process for Track 2 Datathon is currently in progress.",
+            "Stay tuned for further updates and announcements."
+          ]
+        },
+        {
+          "title": "Judging Criteria (Track 2)",
+          "items": [
+            "Innovation & Relevance to the Theme: The solution must align well with the competition's theme and directly address the selected problem statement. The idea should demonstrate uniqueness, creativity, or innovation in its approach.",
+            "Feasibility of the Solution: The solution should be practical and realistic to implement in real-world scenarios. It must be technically and economically viable, with resources or infrastructure being reasonably accessible. The potential challenges of implementing the solution should be identified, and appropriate strategies to address them must be outlined effectively.",
+            "Illustration of the Idea: The idea must be clearly presented, highlighting key features, workflows, and functionality. Visual aids like diagrams, flowcharts, or lifecycle visualizations should be used effectively.",
+            "Technical Depth: Participants need to mention the coding and technologies or any special framework, libraries they have used. For any coding sample it is to be checked if the code sample is well-commented that anyone can understand what is the usability of that particular piece of code.",
+            "Presentation & Demonstration: The PowerPoint presentation should be clear, organized, and comprehensive. It must effectively convey the idea using a balanced mix of visuals, text, and explanations to ensure the audience understands the solution."
+          ]
+        },
+        {
+          "title": "Key Highlights",
+          "items": [
+            "Medallions and Certificates: Awarded by the Territorial Army, these will serve as a prestigious recognition for participants' contributions and achievements during the event.",
+            "Attractive Prizes: Winners will receive exciting prizes, enhancing the competitive spirit and rewarding innovative solutions that can contribute to national security.",
+            "Boarding and Lodging: All participants will be provided with comfortable boarding and lodging facilities for the duration of the event, ensuring a seamless experience.",
+            "Opportunity to Contribute to the Territorial Army: Participants will have a rare chance to collaborate with the Territorial Army, working alongside defense professionals and contributing directly to the national defense landscape.",
+            "Honoring of Winners: Awards to be presented by an Honourable Member of Parliament or a Senior Official from the Government of India.",
+            "Special Recognition Awards: Awards to be presented by an Honourable member of Parliament or a Senior Official from the Government of India."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CCTNS Hackathon & Cyber Challenge",
+      "summary": "Shape the Future of Digital Policing",
+      "category": "NCRB",
+      "status": "Registration TBD",
+      "date": "2025-12-31",
+      "location": "New Delhi",
+      "theme": "cctns",
+      "logo": "/assets/doc-logos/doc-logo-03.png",
+      "overview": "National Crime Records Bureau(NCRB) is organizing 4th CCTNS Hackathon & Cyber Challenge with an aim to enhance skills and deepen understanding of the police personnel at ground level. It is also an endeavor of NCRB to evolve Innovative ideas and solutions for solving day-to-day challenges faced by police. This is being organized in collaboration with CyberPeace Foundation.",
+      "tracks": ["CCTNS Bug Hunting", "Cybercrime investigative methods", "Comparative evaluation of technical applications"],
+      "deliverables": ["Rank holding profile", "Vulnerability and logical flaw findings", "Proof of concept", "Final presentation"],
+      "highlights": ["No. of participants: 10+", "Awards: 9", "Tracks: 3", "Cities: 10+"],
+      "contentSections": [
+        {
+          "title": "Shape the Future of Digital Policing",
+          "paragraphs": ["This is not just a competition; it's a mission to enhance public safety and foster a secure digital environment for all."]
+        },
+        {
+          "title": "Overview",
+          "paragraphs": ["National Crime Records Bureau(NCRB) is organizing 4th CCTNS Hackathon & Cyber Challenge with an aim to enhance skills and deepen understanding of the police personnel at ground level. It is also an endeavor of NCRB to evolve Innovative ideas and solutions for solving day-to-day challenges faced by police. This is being organized in collaboration with CyberPeace Foundation."]
+        },
+        {
+          "title": "Learn About the Tracks",
+          "items": ["Track 1 - CCTNS Bug Hunting", "Track 2 - Cybercrime investigative methods", "Track 3 - Comparative evaluation of technical applications"]
+        },
+        {
+          "title": "Track 1 - CCTNS Bug Hunting",
+          "paragraphs": [
+            "Inviting innovative minds, secured coders across all segments of civilians and police personnel, to find vulnerabilities and logical flaws in the CCTNS application. Participating teams will be evaluated based on their findings, classified as high/ medium /low on criticality",
+            "Register Now"
+          ]
+        },
+        {
+          "title": "Phases of the Competition",
+          "paragraphs": [
+            "Round 1: Interested participants (non-police) will be asked to share their details and their rank holding profile e.g. 'Hacker One' profile, 'Hack the box' profile or any other contribution towards information security management. It is also open to police personnels without any rank holding profile",
+            "Participants: Police personnel, cyber security enthusiasts/professionals, students from academic institutions and professionals from tech companies. The participation will be on individual basis.",
+            "Grand Finale: After shortlisting by the Screening Committee, top 30 participating individuals will be invited to New Delhi for the final round of the competition and best 3 will be selected for awards"
+          ]
+        },
+        {
+          "title": "Evaluation Process",
+          "paragraphs": ["Following our founder's remarks, Josephine Leyannou and Bec Lambert from Marriott International's EMEA region will share how they are accelerating people and leadership development with mentoring."]
+        },
+        {
+          "title": "Track 3 - Identification of New IT Applications for policing for pan-India Rollout",
+          "paragraphs": [
+            "This track of the event is to do a comparative evaluation for analyzing the efficacy of available IT application and identifying for adopting and scaling them for the Pan-India level.",
+            "Who can Participate? Indian Police personnel from States/UTs & CPOs of all ranks.",
+            "Evaluation Process: All entries received will be shortlisted in the first round by a screening committee."
+          ]
+        },
+        {
+          "title": "Hall of Fame",
+          "paragraphs": ["In the CyberChallenge Hall of Fame, we honor the achievements of top cybersecurity champions. Explore the profiles of our winners who have demonstrated excellence in protecting our digital landscape. Join us in celebrating their accomplishments and commitment to securing our nation's cyber infrastructure", "Check out winners from previous years"]
+        }
+      ]
+    },
+    {
+      "title": "Delhi Police Manthan 2025",
+      "summary": "Theme AI",
+      "category": "Delhi Police",
+      "status": "Registration Open",
+      "date": "2025-10-26",
+      "location": "Police Headquarters, Jai Singh Marg, Ashoka Rd, Delhi",
+      "theme": "delhi-police",
+      "logo": "/assets/doc-logos/doc-logo-04.png",
+      "overview": "The Delhi Police Manthan 2025, organized by the Delhi Police in collaboration with IIT Delhi & CyberPeace, aims to drive innovation in cybersecurity by addressing today's most pressing digital safety issues. This event calls upon developers, engineers, cybersecurity enthusiasts, and tech-savvy individuals to build practical, high-impact solutions for a safer digital space.",
+      "tracks": ["AI-Powered Street Traffic & Crowd Flow Analyzer", "AI-Powered Fraud Case Extraction from Voice Recordings", "AI-Powered Emergency Call Analyzer", "Integrated Cybersecurity Solution"],
+      "deliverables": ["Concept note", "PPT", "Prototype screenshots", "Working solution demo"],
+      "highlights": ["Registration Starts: 26 September", "Registration Closes: 26 October", "Announcement of Finalist: 14 December", "Teams: 1-4 members"],
+      "contentSections": [
+        {
+          "title": "Overview",
+          "paragraphs": ["The Delhi Police Manthan 2025, organized by the Delhi Police in collaboration with IIT Delhi & CyberPeace, aims to drive innovation in cybersecurity by addressing today's most pressing digital safety issues. This event calls upon developers, engineers, cybersecurity enthusiasts, and tech-savvy individuals to build practical, high-impact solutions for a safer digital space."]
+        },
+        {
+          "title": "Goals",
+          "items": [
+            "Drive Innovation - Encourage participants to solve real-world cybersecurity issues.",
+            "Raise Awareness - Educate participants and the community about critical online safety concerns.",
+            "Enhance Public Safety - Create solutions that can improve digital security and protect vulnerable groups.",
+            "Foster Collaboration - Provide a platform for technologists to collaborate and create impactful solutions."
+          ]
+        },
+        {
+          "title": "Registration",
+          "items": ["Dedicated portal launched.", "Select one problem statement from three provided.", "Teams (1-4 members).", "Submit: concept note, PPT, prototype screenshots."]
+        },
+        {
+          "title": "Shortlisting",
+          "items": ["Submissions reviewed by evaluation panel.", "Shortlisted teams notified via portal & email.", "Accommodation, local transport, meals provided in Delhi."]
+        },
+        {
+          "title": "Grand Finale (IIT Delhi)",
+          "items": ["2-day event (10 AM - 8 PM).", "Teams present and demo working solutions.", "Must showcase functionality, usability, and scalability.", "Mentors and technical experts available."]
+        },
+        {
+          "title": "Track 1 - AI-Powered Street Traffic & Crowd Flow Analyzer",
+          "paragraphs": ["Build an AI-driven standalone solution that:"],
+          "items": ["Detects, counts & tracks vehicles and pedestrians from video.", "Identifies entry/exit movement.", "Calculates average flow rate.", "Displays structured results & overlays.", "Works offline without cloud.", "Constraints: AI/ML with CV & deep learning; handle lighting, occlusion, mixed traffic."]
+        },
+        {
+          "title": "Track 3 - AI-Powered Emergency Call Analyzer",
+          "paragraphs": ["Build an AI solution for 112 emergency calls to:"],
+          "items": ["Transcribe calls.", "Extract caller name, type of emergency, date/time, location.", "Output JSON/CSV.", "Work offline, ensure privacy."]
+        },
+        {
+          "title": "Integrated Cybersecurity Solution",
+          "items": [
+            "Educate the Public - Digital literacy campaign on scams with real-time alerts.",
+            "Authenticate Communications - Secure portal/app to verify law enforcement messages.",
+            "Support Victims - Rapid response system with banks, telecom, law enforcement.",
+            "Strengthen Legal/Technical Framework - New laws, penalties, procedural guidelines.",
+            "Innovative Tech Use - AI/ML to detect scam patterns and block fraud proactively."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CCTV Surveillance Security & Forensics Hackathon 2.0",
+      "summary": "Decoding the future of digital evidence",
+      "category": "BPRD",
+      "status": "Registrations Closed",
+      "date": "2025-06-28",
+      "location": "New Delhi",
+      "theme": "cctv",
+      "logo": "/assets/bprd-logo.png",
+      "overview": "This event aims to induce collaboration among the students, professionals and law enforcement agencies to empower law enforcement personnel with advanced cyber skills, equipping them to face the complex and evolving landscape of digital threats with confidence and expertise.",
+      "tracks": ["Develop Indigenous CCTV Solutions", "Integrate AI & Smart Analytics", "Strengthen Cybersecurity", "Deliver Cost-Effective Solutions"],
+      "deliverables": ["Team registration", "Nomination package", "Prototype creation", "Detailed presentation and POC"],
+      "highlights": ["Deadline: 28th June 2025", "Location: New Delhi", "Registrations Closed", "Registration: May 9 - June 28, 2025"],
+      "contentSections": [
+        {
+          "title": "Challenge Yourself",
+          "paragraphs": ["28th June 2025", "Deadline", "LOCATION: New Delhi", "REGISTRATIONS CLOSED"]
+        },
+        {
+          "title": "Overview",
+          "paragraphs": ["This event aims to induce collaboration among the students, professionals and law enforcement agencies to empower law enforcement personnel with advanced cyber skills, equipping them to face the complex and evolving landscape of digital threats with confidence and expertise."]
+        },
+        {
+          "title": "Focus Areas",
+          "items": [
+            "Develop Indigenous CCTV Solutions: Create locally manufactured and secure surveillance hardware.",
+            "Integrate AI & Smart Analytics: Enhance threat detection, facial recognition, and predictive policy models.",
+            "Strengthen Cybersecurity: Secure CCTV networks against hacking and data breaches.",
+            "Deliver Cost-Effective Solutions: Design affordable and scalable surveillance systems for both urban and rural settings."
+          ]
+        },
+        {
+          "title": "Registration",
+          "paragraphs": ["Begins on", "May 9 - June 28, 2025"]
+        }
+      ]
+    },
+    {
+      "title": "eRaksha Hackathon 2026",
+      "summary": "Defence-AI and digital safety challenges",
+      "category": "eDC IIT Delhi",
+      "status": "Registration Closed",
+      "date": "2026-01-02",
+      "location": "IIT Delhi",
+      "theme": "eraksha",
+      "logo": "/assets/doc-logos/doc-logo-08.jpeg",
+      "overview": "eDC IIT Delhi, in collaboration with the CyberPeace, is organizing a hackathon focused on defence-AI and digital safety challenges. The event encourages creativity, problem-solving, and industry-level exposure through expert mentorship. Participants will work across domains like AI/ML, threat detection, blockchain, and secure software development. We aim to develop practical, scalable solutions that address defence-related problems and enhance national security. The vision is to build impactful technologies aligned with CyberPeace's mission of a safer, more resilient digital ecosystem.",
+      "tracks": ["Agentic AI for Securing Home IoT Devices Using Deception & Autonomous Defence", "Agentic AI Problem Statement: Deepfake Detection & Authenticity Verification"],
+      "deliverables": ["Abstract in PPT/PDF format", "Methodology and technology stack", "36-hour prototype", "Final presentation"],
+      "highlights": ["Registration Opens: 22 December 2025", "Registration Closes: 02 January 2026", "Shortlisting Period: 03 January 2026 - 10 January 2026", "Finale: 16 January 2026 - 18 January 2026", "Award Ceremony: 10 February 2026"],
+      "contentSections": [
+        {
+          "title": "Overview",
+          "paragraphs": ["eDC IIT Delhi, in collaboration with the CyberPeace, is organizing a hackathon focused on defence-AI and digital safety challenges. The event encourages creativity, problem-solving, and industry-level exposure through expert mentorship. Participants will work across domains like AI/ML, threat detection, blockchain, and secure software development. We aim to develop practical, scalable solutions that address defence-related problems and enhance national security. The vision is to build impactful technologies aligned with CyberPeace's mission of a safer, more resilient digital ecosystem."]
+        },
+        {
+          "title": "Competition Format: Innovation/ Prototype development",
+          "paragraphs": [
+            "The Hackathon is an innovation-driven, prototype-development challenge designed to assess participants' ability to conceptualize and build cutting-edge technological solutions that address real-world security challenges.",
+            "This 36-hour intensive event will revolve around two critical problem statements: Agentic AI for Securing Home IoT Devices Using Deception & Autonomous Defence, where participants will design intelligent, self-defending systems capable of detecting and mitigating threats in home IoT ecosystems; and Agentic AI for Deepfake Detection & Authenticity Verification, which calls for innovative AI-powered prototypes to identify manipulated media and validate content integrity. The Hackathon aims to foster creativity, rapid prototyping, and practical innovation in areas vital to national security and digital trust."
+          ]
+        },
+        {
+          "title": "Registration",
+          "paragraphs": ["Registration for eRaksha Hackathon 2025 begins on Dec 22, 2025. Participants can register individually or in teams of up to 3 members and submit an abstract explaining their proposed approach to the challenge in PPT/PDF format. They should outline the problem they aim to solve, the methodology and technological stack they intend to use, and any relevant experience or past work in the specific domain."]
+        },
+        {
+          "title": "Shortlisting",
+          "paragraphs": ["Participants/Teams will be evaluated based on the document/brief, the quality of their writeup/idea and PowerPoint presentation submitted during registrations on the basis of set judging criteria.", "Top 20 (maximum 20x3=60 head counts) Teams/Participants will be shortlisted for the Final Round"]
+        },
+        {
+          "title": "Grand Finale (IIT Delhi)",
+          "paragraphs": ["The Inauguration of the Hackathon will take place on 16th January 2026 at the IIT Delhi Auditorium. The Grand Finale is scheduled from 16 January to 18 January 2026, at IIT Delhi.", "The Award Function will be held on 10th February 2026 at Bharat Mandapam, exclusively for the winners."]
+        },
+        {
+          "title": "Problem Statement - Agentic AI for Securing Home IoT Devices Using Deception & Autonomous Defence",
+          "paragraphs": ["Design an agentic AI-powered IoT security system that protects home users from cyber attacks using:", "Registration Closed"]
+        },
+        {
+          "title": "Agentic AI Problem Statement: Deepfake Detection & Authenticity Verification",
+          "paragraphs": ["Develop an agentic AI system capable of autonomouslyidentifying, analysing, and responding to deepfake audio/video content in realtime across operational, tactical, and open-source environments.", "Registration Closed"]
+        },
+        {
+          "title": "Objectives",
+          "paragraphs": ["Develop an agentic AI system capable of autonomously identifying, analysing and responding to deepfake audio/ video content in realtime across operational, tactical and open-source environments."]
+        },
+        {
+          "title": "Key Requirements",
+          "items": [
+            "On-Device, Field-Operative Agent",
+            "Create a lightweight edge agent that can run on: Smartphones, Body-cams, RBAC, MFA, secure firmware, Handheld tactical devices",
+            "Offline detection without cloud dependency",
+            "Low-power operation",
+            "Immediate authentication results during field missions",
+            "Tools and frameworks",
+            "Sample test environments (mock attacks)"
+          ]
+        },
+        {
+          "title": "Agent Capabilities",
+          "items": ["Edge inference", "Compression-aware detection", "Cognitive assistance for operatives"]
+        },
+        {
+          "title": "Expected Outcome",
+          "items": [
+            "A reliable, fast, autonomous deepfake detection agent that operates across cloud, edge, and field devices.",
+            "Continuously learns from new threats.",
+            "Assists security agencies, social platforms and operatives.",
+            "Strengthens national security and digital media integrity."
+          ]
+        },
+        {
+          "title": "Judging Criteria",
+          "items": [
+            "Innovation & Creativity: Assessing originality, inventiveness, and the potential to disrupt traditional approaches. The solution must align well with the competition's theme and directly address the selected problem statement. The idea should demonstrate uniqueness, creativity, or innovation in its approach.",
+            "Technical Implementation and Feasibility: Evaluating the feasibility, scalability, and robustness of the design and prototype. The solution should be practical and realistic to implement in real-world scenarios. It must be technically and economically viable, with resources or infrastructure being reasonably accessible. The potential challenges of implementing the solution should be identified, and appropriate strategies to address them must be outlined effectively.",
+            "Technical depth and Illustration of the idea: The idea must be clearly presented, highlighting its key features, workflows, and functionality through effective use of visual aids such as diagrams, flowcharts, or lifecycle visualizations. Additionally, participants should demonstrate the technical depth of their solution by detailing the coding, technologies, frameworks, or libraries used. Any code samples provided should be well-commented and easy to understand, clearly explaining the purpose and usability of each component.",
+            "Impact on Security: Measuring how effectively the solution enhances surveillance capabilities and fortifies cybersecurity measures.",
+            "Presentation & Clarity: Examining the clarity of the project presentation, the ability to articulate the problem-solving approach, and the overall persuasive power of the demonstration. The PowerPoint presentation should be clear, organized, and comprehensive. It must effectively convey the idea using a balanced mix of visuals, text, and explanations to ensure the audience understands the solution."
+          ]
+        }
+      ]
+    }
+  ],
+  "objectives": [
+    { "title": "Build Fast", "text": "Prototype security ideas in timed hackathon formats." },
+    { "title": "Defend Better", "text": "Work on real public-safety, policing and defence problems." },
+    { "title": "Show Impact", "text": "Present working solutions, proof of concept and technical depth." },
+    { "title": "Collaborate", "text": "Bring students, professionals, researchers and agencies together." }
+  ],
+  "hallOfFame": [
+    { "rank": 1, "team": "Team RootX", "year": "2024 Winner" },
+    { "rank": 2, "team": "CyberSentinels", "year": "2023 Winner" },
+    { "rank": 3, "team": "Null Hunters", "year": "2022 Winner" }
+  ],
+  "updates": [
+    {
+      "date": "23 Jul",
+      "title": "Terrier Cyber Quest 2025 announced",
+      "summary": "Indian Army Terrier Cyber Quest 2.0 features Bug Hunting and Datathon tracks."
+    },
+    {
+      "date": "26 Sep",
+      "title": "Delhi Police Manthan 2025 registration period",
+      "summary": "Challenge tracks focus on AI-powered public safety and fraud response."
+    },
+    {
+      "date": "22 Dec",
+      "title": "eRaksha Hackathon 2026 registration period",
+      "summary": "The event focuses on defence-AI and digital safety challenges."
+    }
+  ],
+  "events": [
+    { "title": "Terrier Cyber Quest Grand Finale", "date": "2025-10-06", "location": "New Delhi" },
+    { "title": "Delhi Police Manthan Finalist Announcement", "date": "2025-12-14", "location": "Online" },
+    { "title": "eRaksha Hackathon Grand Finale", "date": "2026-01-16", "location": "IIT Delhi" }
+  ],
+  "partners": [
+    "Indian Army",
+    "NCRB",
+    "Delhi Police",
+    "BPRD",
+    "IIT Delhi",
+    "CyberPeace"
+  ]
+}
