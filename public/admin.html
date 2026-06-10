@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CMS | Cyber Challenge India</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark image-brand"><img src="/assets/cyber-logo.png" alt="Cyber Challenge India logo"></span>
+        <span>
+          <strong>Cyber Challenge CMS</strong>
+          <small>Content & registrations</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="secondary-button" href="/">View Website</a>
+        <button class="primary-button" data-logout type="button">Logout</button>
+      </div>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">CMS Editor</p>
+            <h1>Update website content</h1>
+          </div>
+          <button class="primary-button" data-save-site>Save CMS</button>
+        </div>
+        <p class="form-status" data-cms-status></p>
+        <textarea class="cms-editor" data-cms-editor spellcheck="false"></textarea>
+      </section>
+
+      <section class="admin-panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Registrations</p>
+            <h2>Latest submissions</h2>
+          </div>
+          <button class="secondary-button" data-refresh-registrations>Refresh</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Team</th>
+                <th>Challenge</th>
+                <th>Institution</th>
+              </tr>
+            </thead>
+            <tbody data-registration-rows></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

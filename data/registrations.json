@@ -1,0 +1,50 @@
+[
+  {
+    "id": "a52f4322-7e4b-4002-bdab-e4ace94374b5",
+    "createdAt": "2026-06-10T09:46:42.483Z",
+    "fullName": "amit",
+    "email": "amit@gmail.com",
+    "phone": "646446968879969",
+    "institution": "amity",
+    "role": "Researcher",
+    "challenge": "CCTV Surveillance",
+    "teamName": "haant",
+    "experience": ""
+  },
+  {
+    "id": "d27b12d1-a8bc-4172-abad-0752fb5a338f",
+    "createdAt": "2026-06-10T09:42:53.763Z",
+    "fullName": "Kundan Kumar Thakur",
+    "email": "kundanthakur2923x@gmail.com",
+    "phone": "7858838033",
+    "institution": "amity",
+    "role": "Professional",
+    "challenge": "CCTNS Hackathon",
+    "teamName": "gandhi",
+    "experience": ""
+  },
+  {
+    "id": "f51fc558-c6db-454b-a260-5c1dc83126a9",
+    "createdAt": "2026-06-10T09:31:34.230Z",
+    "fullName": "Kundan Kumar Thakur",
+    "email": "kundanthakur2923x@gmail.com",
+    "phone": "7858838033",
+    "institution": "amity",
+    "role": "Researcher",
+    "challenge": "ERaksha Hackathon",
+    "teamName": "gandhi",
+    "experience": ""
+  },
+  {
+    "id": "4396355c-30df-4968-b7af-c72d34188786",
+    "createdAt": "2026-06-10T09:30:20.914Z",
+    "fullName": "Kundan Kumar Thakur",
+    "email": "kundanthakur2923x@gmail.com",
+    "phone": "7858838033",
+    "institution": "amity",
+    "role": "Student",
+    "challenge": "ERaksha Hackathon",
+    "teamName": "gandhi",
+    "experience": ""
+  }
+]

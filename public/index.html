@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Challenge India</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Cyber Challenge India home">
+        <span class="brand-mark image-brand"><img src="/assets/cyber-logo.png" alt="Cyber Challenge India logo"></span>
+        <span>
+          <strong data-brand-name>Cyber Challenge India</strong>
+          <small data-brand-tagline>Defend - Innovate - Secure</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#fame">Hall of Fame</a>
+        <a href="#events">Events</a>
+        <a href="#partners">Partners</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation">Menu</button>
+        <a class="primary-button" href="#register">Register / Login</a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="neural-field">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="code-rain"><span>root@cci:~/challenge</span><span>scan --track ai-forensics</span><span>deploy secure-prototype</span></div>
+          <div class="drone-visual">
+            <i></i><i></i><i></i><i></i>
+            <b></b>
+          </div>
+          <div class="radar-sweep"></div>
+          <div class="command-window window-map">
+            <div class="map-live-badge">Live</div>
+            <div class="india-map-shape"></div>
+            <span class="threat-dot dot-1"></span>
+            <span class="threat-dot dot-2"></span>
+            <span class="threat-dot dot-3"></span>
+            <span class="threat-dot dot-4"></span>
+            <span class="attack-line line-1"></span>
+            <span class="attack-line line-2"></span>
+            <span class="attack-line line-3"></span>
+            <strong>Live Threat Map</strong>
+          </div>
+          <div class="command-window window-feed">
+            <strong>Live Hackathon Feed</strong>
+            <i></i><i></i><i></i>
+          </div>
+          <div class="signal-ring"></div>
+        </div>
+        <div class="hero-copy">
+          <p class="section-kicker" data-brand-badge>Cyber Defence Command</p>
+          <h1 data-brand-headline>Defending India's Digital Frontier</h1>
+          <p class="hero-summary" data-brand-summary>
+            A national platform for innovators, researchers and cyber warriors to collaborate, compete and strengthen India's digital future.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button large" href="#challenges">Explore Challenges</a>
+            <a class="secondary-button large" href="#events">View Events</a>
+          </div>
+          <div class="stats-row" data-stats></div>
+          <div class="hero-command-board" aria-label="Hackathon command board">
+            <div>
+              <span>Live Ops</span>
+              <strong>5 Active Missions</strong>
+            </div>
+            <div>
+              <span>Drone Scan</span>
+              <strong>Threat Grid Online</strong>
+            </div>
+            <div>
+              <span>Neural Signal</span>
+              <strong>AI Defence Sync</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="challenges">
+        <div class="section-heading">
+          <p class="section-kicker">Active Challenges</p>
+          <a href="#register">View all challenges</a>
+        </div>
+        <div class="challenge-grid" data-challenges></div>
+      </section>
+
+      <section class="dashboard-grid" id="about">
+        <article class="panel mission-panel">
+          <p class="section-kicker">Mission Objectives</p>
+          <div class="objective-grid" data-objectives></div>
+          <a class="primary-button compact" href="#register">Learn More</a>
+        </article>
+
+        <article class="panel fame-panel" id="fame">
+          <p class="section-kicker trophy">Hall of Fame</p>
+          <div class="podium" data-fame></div>
+          <a class="primary-button compact" href="#fame">View Hall of Fame</a>
+        </article>
+
+        <article class="panel updates-panel">
+          <p class="section-kicker">Latest Updates</p>
+          <div data-updates></div>
+        </article>
+      </section>
+
+      <section class="section split-section" id="events">
+        <div>
+          <p class="section-kicker">Command Calendar</p>
+          <h2>Events built for cyber warriors, researchers and campus teams.</h2>
+          <p>
+            Each event is designed around practical defence scenarios, guided mentorship and problem statements that help teams build deployable security ideas.
+          </p>
+        </div>
+        <div class="event-list" data-events></div>
+      </section>
+
+      <section class="section registration-section" id="register">
+        <div>
+          <p class="section-kicker">Registration</p>
+          <h2>Join the next challenge cohort.</h2>
+          <p>
+            Register your team for active challenges. Submissions are stored securely for admin review.
+          </p>
+        </div>
+        <form class="registration-form" data-registration-form>
+          <label>
+            Full Name
+            <input name="fullName" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <label>
+            Phone
+            <input name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            Institution / Organization
+            <input name="institution" required>
+          </label>
+          <label>
+            Role
+            <select name="role" required>
+              <option value="">Select role</option>
+              <option>Student</option>
+              <option>Researcher</option>
+              <option>Professional</option>
+              <option>Faculty</option>
+              <option>Government / Law Enforcement</option>
+            </select>
+          </label>
+          <label>
+            Challenge
+            <select name="challenge" data-challenge-select required></select>
+          </label>
+          <label>
+            Team Name
+            <input name="teamName" required>
+          </label>
+          <label class="wide">
+            Experience
+            <textarea name="experience" rows="4" placeholder="Briefly describe your cyber security experience"></textarea>
+          </label>
+          <button class="primary-button wide" type="submit">Submit Registration</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="partners-band" id="partners">
+        <p>Our Partners</p>
+        <div class="partner-marquee">
+          <div class="partner-track" data-partners></div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div>
+          <p class="section-kicker">Contact Us</p>
+          <h2>Questions about the challenge?</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:gcc-queries@cyberpeace.net">
+            <span>Email</span>
+            <strong>gcc-queries@cyberpeace.net</strong>
+          </a>
+          <a class="contact-card" href="tel:9534456565">
+            <span>Phone Number</span>
+            <strong>9534456565</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Cyber Challenge India</span>
+      <span>gcc-queries@cyberpeace.net | 9534456565</span>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

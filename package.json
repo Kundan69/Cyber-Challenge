@@ -1,0 +1,22 @@
+{
+  "name": "cyber-challenge-india-redesign",
+  "version": "1.0.0",
+  "description": "Full-stack Cyber Challenge India redesign with CMS and registration form.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "netlify:dev": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.2.0"
+  },
+  "keywords": [
+    "cyber",
+    "challenge",
+    "cms",
+    "registration"
+  ],
+  "author": "",
+  "license": "MIT"
+}
