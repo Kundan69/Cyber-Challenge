@@ -25,7 +25,7 @@ function createSession() {
 }
 
 function isAdmin(req) {
-  const token = parseCookies(req.headers.cookie).admin_session;
+  const token = parseCookies(req.headers.cookie || "").admin_session;
   if (!token) return false;
   const [encoded, signature] = token.split(".");
   if (!encoded || signature !== sign(encoded)) return false;
@@ -58,13 +58,7 @@ async function readBody(req) {
 }
 
 async function getKv() {
-  if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) return null;
-  try {
-    const mod = await import("@vercel/kv");
-    return mod.kv;
-  } catch {
-    return null;
-  }
+  return null;
 }
 
 async function readStoreJson(key, fallback) {
