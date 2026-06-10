@@ -4,6 +4,7 @@
   "description": "Full-stack Cyber Challenge India redesign with CMS and registration form.",
   "main": "server.js",
   "scripts": {
+    "build": "node -e \"console.log('Static site: no build step required')\"",
     "start": "node server.js",
     "dev": "node server.js",
     "netlify:dev": "netlify dev"
