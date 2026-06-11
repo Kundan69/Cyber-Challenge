@@ -117,22 +117,23 @@ function initPointerGlow() {
   }, { passive: true });
 }
 
-function syncMotionToggle() {
-  const enabled = localStorage.getItem("cci-motion") !== "off";
-  document.body.classList.toggle("motion-paused", !enabled);
-  document.querySelectorAll("[data-motion-toggle]").forEach((button) => {
-    button.setAttribute("aria-pressed", String(enabled));
-    button.classList.toggle("is-off", !enabled);
+function syncThemeToggle() {
+  const theme = localStorage.getItem("cci-theme") || "dark";
+  const lightMode = theme === "light";
+  document.body.classList.toggle("theme-light", lightMode);
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(lightMode));
+    button.classList.toggle("is-light", lightMode);
   });
 }
 
-function initMotionToggle() {
-  syncMotionToggle();
-  document.querySelectorAll("[data-motion-toggle]").forEach((button) => {
+function initThemeToggle() {
+  syncThemeToggle();
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
     button.addEventListener("click", () => {
-      const enabled = button.getAttribute("aria-pressed") !== "true";
-      localStorage.setItem("cci-motion", enabled ? "on" : "off");
-      syncMotionToggle();
+      const lightMode = button.getAttribute("aria-pressed") !== "true";
+      localStorage.setItem("cci-theme", lightMode ? "light" : "dark");
+      syncThemeToggle();
     });
   });
 }
@@ -273,7 +274,7 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
   link.addEventListener("click", () => document.body.classList.remove("nav-open"));
 });
 initPointerGlow();
-initMotionToggle();
+initThemeToggle();
 loadSite().catch(() => {
   document.querySelector("[data-form-status]").textContent = "Unable to load site data.";
 });

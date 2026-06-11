@@ -2441,6 +2441,295 @@ body::before {
   transform: translateY(-2px);
 }
 
+/* White-blue theme controlled by the header toggle */
+body.theme-light {
+  --ink: #071527;
+  --muted: #526579;
+  --olive: #0b68ff;
+  --olive-2: #19b6ff;
+  --gold: #0a8bff;
+  --teal: #0fc7ff;
+  --paper: #f5fbff;
+  --line: rgba(8, 84, 170, 0.14);
+  --shadow: 0 24px 70px rgba(18, 71, 128, 0.14);
+  --soft-shadow: 0 16px 44px rgba(18, 71, 128, 0.12);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 10%, rgba(15, 199, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 86% 6%, rgba(11, 104, 255, 0.14), transparent 26%),
+    linear-gradient(180deg, #f8fdff 0%, #eef8ff 48%, #ffffff 100%);
+}
+
+body.theme-light::before {
+  opacity: 1;
+  background:
+    radial-gradient(circle 420px at var(--pointer-x) var(--pointer-y), rgba(11, 104, 255, 0.14), transparent 58%),
+    linear-gradient(90deg, rgba(11, 104, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(15, 199, 255, 0.055) 1px, transparent 1px);
+  background-size: auto, 52px 52px, 52px 52px;
+}
+
+body.theme-light::after {
+  background:
+    linear-gradient(rgba(7, 21, 39, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, transparent 0 38%, rgba(255, 255, 255, 0.58));
+  background-size: 100% 4px, auto;
+}
+
+body.theme-light .ambient-cyber-bg span:nth-child(1),
+body.theme-light .ambient-cyber-bg span:nth-child(4) {
+  background: #0b68ff;
+  opacity: 0.18;
+}
+
+body.theme-light .ambient-cyber-bg span:nth-child(2),
+body.theme-light .ambient-cyber-bg span:nth-child(3) {
+  background: #0fc7ff;
+  opacity: 0.16;
+}
+
+body.theme-light .site-header {
+  border-color: rgba(11, 104, 255, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(232, 246, 255, 0.72)),
+    radial-gradient(circle at var(--pointer-x) 0, rgba(15, 199, 255, 0.16), transparent 34%);
+  box-shadow:
+    0 0 0 1px rgba(15, 199, 255, 0.1),
+    0 24px 80px rgba(18, 71, 128, 0.16);
+}
+
+body.theme-light .brand strong,
+body.theme-light h1,
+body.theme-light h2,
+body.theme-light .challenge-card h3,
+body.theme-light .event-card h3,
+body.theme-light .brief-card h3,
+body.theme-light .update h3 {
+  color: #071527;
+  text-shadow: none;
+}
+
+body.theme-light .brand small,
+body.theme-light .section-kicker,
+body.theme-light .main-nav a,
+body.theme-light .challenge-meta,
+body.theme-light .challenge-link,
+body.theme-light label,
+body.theme-light .contact-card strong,
+body.theme-light .challenge-overview-strip strong,
+body.theme-light .stat strong {
+  color: #085cdb;
+}
+
+body.theme-light .main-nav a {
+  background: transparent;
+}
+
+body.theme-light .main-nav a::after {
+  background: linear-gradient(90deg, #0b68ff, #0fc7ff);
+  box-shadow: 0 0 16px rgba(11, 104, 255, 0.32);
+}
+
+body.theme-light .theme-toggle {
+  color: #073160;
+  border-color: rgba(11, 104, 255, 0.3);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 0 22px rgba(11, 104, 255, 0.08), 0 0 22px rgba(15, 199, 255, 0.13);
+}
+
+body.theme-light .theme-toggle span,
+.theme-toggle.is-light span {
+  background: linear-gradient(90deg, #0b68ff, #0fc7ff);
+  box-shadow: 0 0 18px rgba(11, 104, 255, 0.3);
+}
+
+body.theme-light .theme-toggle span::after,
+.theme-toggle.is-light span::after {
+  background: #ffffff;
+  transform: translateX(12px);
+}
+
+body.theme-light .primary-button,
+body.theme-light .secondary-button,
+body.theme-light .compact {
+  color: #ffffff;
+  border-color: rgba(11, 104, 255, 0.25);
+  background: linear-gradient(135deg, #0b68ff, #0fc7ff);
+  box-shadow: 0 16px 36px rgba(11, 104, 255, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+body.theme-light .secondary-button {
+  color: #07508f;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+body.theme-light .hero {
+  border-color: rgba(11, 104, 255, 0.16);
+  background:
+    radial-gradient(circle at 74% 28%, rgba(15, 199, 255, 0.24), transparent 30%),
+    radial-gradient(circle at 16% 78%, rgba(11, 104, 255, 0.16), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(233, 247, 255, 0.96));
+  box-shadow:
+    inset 0 0 90px rgba(11, 104, 255, 0.06),
+    0 36px 110px rgba(18, 71, 128, 0.16);
+}
+
+body.theme-light .hero::before {
+  background:
+    radial-gradient(circle at 48% 42%, rgba(15, 199, 255, 0.22), transparent 22%),
+    repeating-linear-gradient(90deg, rgba(11, 104, 255, 0.08) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(0deg, rgba(15, 199, 255, 0.08) 0 1px, transparent 1px 42px),
+    rgba(236, 249, 255, 0.72);
+}
+
+body.theme-light .hero::after {
+  background:
+    linear-gradient(90deg, transparent 8%, rgba(11, 104, 255, 0.72) 8% 11%, transparent 11% 21%, rgba(15, 199, 255, 0.76) 21% 24%, transparent 24% 37%, rgba(11, 104, 255, 0.42) 37% 41%, transparent 41%),
+    rgba(255, 255, 255, 0.58);
+}
+
+body.theme-light .hero-copy h1,
+body.theme-light .challenge-hero-detail h1,
+body.theme-light .challenge-hero-detail.theme-terrier h1 {
+  background: linear-gradient(180deg, #061629 0%, #0b68ff 58%, #0fc7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+body.theme-light .hero-summary,
+body.theme-light .challenge-card p,
+body.theme-light .event-card p,
+body.theme-light .panel p,
+body.theme-light .split-section p,
+body.theme-light .brief-card p,
+body.theme-light .detail-list,
+body.theme-light .winner span,
+body.theme-light .stat span,
+body.theme-light .contact-card span,
+body.theme-light .challenge-location,
+body.theme-light .update p {
+  color: #526579;
+}
+
+body.theme-light .command-window,
+body.theme-light .hero-command-board div,
+body.theme-light .panel,
+body.theme-light .challenge-card,
+body.theme-light .registration-form,
+body.theme-light .event-card,
+body.theme-light .admin-panel,
+body.theme-light .contact-section,
+body.theme-light .brief-card,
+body.theme-light .challenge-overview-strip,
+body.theme-light .challenge-hero-logo,
+body.theme-light .login-card,
+body.theme-light .contact-card {
+  border-color: rgba(11, 104, 255, 0.14);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(237, 248, 255, 0.92)),
+    radial-gradient(circle at 12% 0%, rgba(15, 199, 255, 0.13), transparent 30%);
+  box-shadow: var(--soft-shadow);
+}
+
+body.theme-light .challenge-card.theme-terrier,
+body.theme-light .challenge-card.theme-cctns,
+body.theme-light .challenge-card.theme-delhi-police,
+body.theme-light .challenge-card.theme-cctv,
+body.theme-light .challenge-card.theme-eraksha {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(15, 199, 255, 0.2), transparent 26%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(231, 246, 255, 0.96));
+}
+
+body.theme-light .challenge-card.theme-terrier {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(231, 246, 255, 0.92)),
+    url("/assets/terrier-hero.png") center / cover no-repeat;
+}
+
+body.theme-light .challenge-status {
+  color: #ffffff;
+  background: linear-gradient(90deg, #0b68ff, #0fc7ff);
+}
+
+body.theme-light .stat-icon,
+body.theme-light .challenge-icon,
+body.theme-light .objective-icon {
+  color: #0b68ff;
+  border-color: rgba(11, 104, 255, 0.2);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 0 0 5px rgba(15, 199, 255, 0.08), 0 0 24px rgba(11, 104, 255, 0.1);
+}
+
+body.theme-light .objective,
+body.theme-light .winner,
+body.theme-light .update-date,
+body.theme-light .challenge-overview-strip div,
+body.theme-light .partner-chip {
+  border-color: rgba(11, 104, 255, 0.14);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+body.theme-light .winner-badge {
+  color: #ffffff;
+  background: linear-gradient(180deg, #0fc7ff, #0b68ff);
+}
+
+body.theme-light input,
+body.theme-light select,
+body.theme-light textarea {
+  color: #071527;
+  border-color: rgba(11, 104, 255, 0.2);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+body.theme-light input:focus,
+body.theme-light select:focus,
+body.theme-light textarea:focus {
+  outline-color: rgba(11, 104, 255, 0.34);
+}
+
+body.theme-light .partners-band p {
+  color: #ffffff;
+  background: linear-gradient(90deg, #0b68ff, #0fc7ff);
+}
+
+body.theme-light .modal-backdrop {
+  background: rgba(232, 246, 255, 0.72);
+}
+
+body.theme-light .registration-dialog {
+  border-color: rgba(11, 104, 255, 0.18);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(15, 199, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(235, 248, 255, 0.98));
+  box-shadow: 0 42px 130px rgba(18, 71, 128, 0.18), 0 0 60px rgba(15, 199, 255, 0.14);
+}
+
+body.theme-light .challenge-hero-detail.theme-terrier {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(238, 249, 255, 0.56) 36%, rgba(255, 255, 255, 0.98) 58%),
+    radial-gradient(circle at 27% 48%, rgba(15, 199, 255, 0.16), transparent 24%),
+    url("/assets/terrier-hero.png") 7% center / auto 82% no-repeat,
+    linear-gradient(135deg, #f8fdff, #eaf7ff);
+  border-color: rgba(11, 104, 255, 0.22);
+  box-shadow: 0 0 0 1px rgba(15, 199, 255, 0.12), 0 28px 80px rgba(18, 71, 128, 0.16);
+}
+
+body.theme-light .challenge-hero-detail.theme-terrier .challenge-hero-layout > div:first-child {
+  border-color: rgba(11, 104, 255, 0.16);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 70px rgba(18, 71, 128, 0.12);
+}
+
+body.theme-light .site-footer {
+  color: #526579;
+  border-top-color: rgba(11, 104, 255, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+}
+
 /* Signature interaction refresh */
 .site-header {
   left: 14px;
@@ -2469,7 +2758,7 @@ body::before {
   transform: rotate(-2deg) scale(1.05);
 }
 
-.motion-toggle {
+.theme-toggle {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -2487,7 +2776,7 @@ body::before {
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease, box-shadow 220ms ease;
 }
 
-.motion-toggle span {
+.theme-toggle span {
   width: 28px;
   height: 16px;
   border-radius: 999px;
@@ -2495,7 +2784,7 @@ body::before {
   box-shadow: 0 0 18px rgba(115, 245, 165, 0.38);
 }
 
-.motion-toggle span::after {
+.theme-toggle span::after {
   display: block;
   width: 12px;
   height: 12px;
@@ -2504,28 +2793,30 @@ body::before {
   background: #03100e;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.32);
   content: "";
-  transform: translateX(12px);
+  transform: translateX(0);
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.motion-toggle:hover {
+.theme-toggle:hover {
   border-color: rgba(115, 245, 165, 0.86);
   box-shadow: inset 0 0 26px rgba(115, 245, 165, 0.14), 0 0 34px rgba(25, 216, 255, 0.2);
   transform: translateY(-2px);
 }
 
-.motion-toggle.is-off {
-  color: rgba(237, 247, 242, 0.66);
-  border-color: rgba(153, 176, 170, 0.24);
+.theme-toggle.is-light {
+  color: #073160;
+  border-color: rgba(11, 104, 255, 0.36);
+  background: rgba(255, 255, 255, 0.84);
 }
 
-.motion-toggle.is-off span {
-  background: rgba(153, 176, 170, 0.24);
-  box-shadow: none;
+.theme-toggle.is-light span {
+  background: linear-gradient(90deg, #0b68ff, #0fc7ff);
+  box-shadow: 0 0 18px rgba(11, 104, 255, 0.3);
 }
 
-.motion-toggle.is-off span::after {
-  transform: translateX(0);
+.theme-toggle.is-light span::after {
+  background: #ffffff;
+  transform: translateX(12px);
 }
 
 main {
@@ -2732,22 +3023,6 @@ main {
   }
 }
 
-.motion-paused *,
-.motion-paused *::before,
-.motion-paused *::after {
-  animation-play-state: paused !important;
-  scroll-behavior: auto !important;
-}
-
-.motion-paused .scroll-progress,
-.motion-paused .ambient-cyber-bg,
-.motion-paused .radar-sweep,
-.motion-paused .drone-visual,
-.motion-paused .signal-ring,
-.motion-paused .code-rain {
-  opacity: 0.18 !important;
-}
-
 @media (max-width: 1180px) {
   .site-header {
     left: 10px;
@@ -2771,7 +3046,7 @@ main {
     gap: 8px;
   }
 
-  .motion-toggle {
+  .theme-toggle {
     height: 38px;
     padding-right: 10px;
   }
