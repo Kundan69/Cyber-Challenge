@@ -122,7 +122,35 @@ async function submitRegistration(event) {
   status.textContent = `Registration received for ${result.registration.teamName}.`;
 }
 
+function openRegistration(event) {
+  if (event) event.preventDefault();
+  const modal = document.querySelector("[data-registration-modal]");
+  modal.hidden = false;
+  document.body.classList.add("modal-open");
+  const firstInput = modal.querySelector("input, select, textarea, button");
+  if (firstInput) firstInput.focus();
+}
+
+function closeRegistration() {
+  const modal = document.querySelector("[data-registration-modal]");
+  modal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (window.location.hash === "#register") {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+}
+
 document.querySelector("[data-registration-form]").addEventListener("submit", submitRegistration);
+document.querySelectorAll('a[href="#register"]').forEach((link) => {
+  link.addEventListener("click", openRegistration);
+});
+document.querySelector("[data-close-registration]").addEventListener("click", closeRegistration);
+document.querySelector("[data-registration-modal]").addEventListener("click", (event) => {
+  if (event.target.matches("[data-registration-modal]")) closeRegistration();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !document.querySelector("[data-registration-modal]").hidden) closeRegistration();
+});
 document.querySelector("[data-nav-toggle]").addEventListener("click", () => {
   document.body.classList.toggle("nav-open");
 });
@@ -132,3 +160,7 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 loadSite().catch(() => {
   document.querySelector("[data-form-status]").textContent = "Unable to load site data.";
 });
+
+if (window.location.hash === "#register") {
+  openRegistration();
+}

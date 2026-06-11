@@ -126,10 +126,41 @@
         <div class="event-list" data-events></div>
       </section>
 
-      <section class="section registration-section" id="register">
+      <section class="partners-band" id="partners">
+        <p>Our Partners</p>
+        <div class="partner-marquee">
+          <div class="partner-track" data-partners></div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
         <div>
+          <p class="section-kicker">Contact Us</p>
+          <h2>Questions about the challenge?</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:gcc-queries@cyberpeace.net">
+            <span>Email</span>
+            <strong>gcc-queries@cyberpeace.net</strong>
+          </a>
+          <a class="contact-card" href="tel:9534456565">
+            <span>Phone Number</span>
+            <strong>9534456565</strong>
+          </a>
+          <a class="contact-card" href="/login.html">
+            <span>CMS</span>
+            <strong>Admin Access</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="register" data-registration-modal hidden>
+      <section class="registration-dialog" role="dialog" aria-modal="true" aria-labelledby="registration-title">
+        <button class="modal-close" type="button" data-close-registration aria-label="Close registration">x</button>
+        <div class="registration-intro">
           <p class="section-kicker">Registration</p>
-          <h2>Join the next challenge cohort.</h2>
+          <h2 id="registration-title">Join the next challenge cohort.</h2>
           <p>
             Register your team for active challenges. Submissions are stored securely for admin review.
           </p>
@@ -178,35 +209,11 @@
           <p class="form-status" data-form-status role="status"></p>
         </form>
       </section>
-
-      <section class="partners-band" id="partners">
-        <p>Our Partners</p>
-        <div class="partner-marquee">
-          <div class="partner-track" data-partners></div>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div>
-          <p class="section-kicker">Contact Us</p>
-          <h2>Questions about the challenge?</h2>
-        </div>
-        <div class="contact-grid">
-          <a class="contact-card" href="mailto:gcc-queries@cyberpeace.net">
-            <span>Email</span>
-            <strong>gcc-queries@cyberpeace.net</strong>
-          </a>
-          <a class="contact-card" href="tel:9534456565">
-            <span>Phone Number</span>
-            <strong>9534456565</strong>
-          </a>
-        </div>
-      </section>
-    </main>
+    </div>
 
     <footer class="site-footer">
       <span>Cyber Challenge India</span>
-      <span>gcc-queries@cyberpeace.net | 9534456565</span>
+      <span>gcc-queries@cyberpeace.net | 9534456565 | <a href="/login.html">Admin Access</a></span>
     </footer>
 
     <script src="/app.js"></script>
