@@ -755,7 +755,7 @@ h2 {
 
 .challenge-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 18px;
 }
 
@@ -775,7 +775,7 @@ h2 {
 .challenge-card {
   position: relative;
   display: block;
-  min-height: 250px;
+  min-height: 280px;
   padding: 22px;
   overflow: hidden;
   isolation: isolate;
@@ -945,9 +945,10 @@ h2 {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1.25fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr) minmax(0, 1.2fr);
   gap: 20px;
-  padding: 16px 0 28px;
+  padding-top: clamp(34px, 5vw, 64px);
+  padding-bottom: clamp(34px, 5vw, 64px);
 }
 
 .panel {
@@ -978,7 +979,7 @@ h2 {
 
 .objective-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin: 24px 0;
 }
@@ -1166,7 +1167,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 32px;
-  padding: 28px 0 52px;
+  padding: 0 0 26px;
   overflow: hidden;
 }
 
@@ -1225,7 +1226,7 @@ textarea {
   grid-template-columns: 0.8fr 1.2fr;
   gap: clamp(20px, 4vw, 54px);
   align-items: center;
-  margin: 0 auto 48px;
+  margin: 0 auto;
   padding: clamp(24px, 5vw, 44px);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1578,7 +1579,6 @@ td {
     text-align: center;
   }
 
-  .challenge-grid,
   .dashboard-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1728,32 +1728,27 @@ td {
   }
 }
 
-/* One-screen page flow and final alignment polish */
+/* Professional page flow and final alignment polish */
 html {
   scroll-padding-top: 86px;
 }
 
 @media (min-width: 900px) {
-  main > .hero,
-  main > .section,
-  main > .dashboard-grid,
-  main > .final-page {
+  main > .hero {
     min-height: calc(100vh - 86px);
-    scroll-snap-align: start;
-  }
-
-  main > .section,
-  main > .dashboard-grid,
-  main > .final-page {
-    display: grid;
-    align-content: center;
   }
 }
 
 .section,
 .dashboard-grid,
 .final-page {
-  padding-block: clamp(52px, 7vw, 86px);
+  padding-block: clamp(34px, 5vw, 64px);
+}
+
+.section + .dashboard-grid,
+.dashboard-grid + .section,
+.section + .final-page {
+  margin-top: 0;
 }
 
 .final-page {
@@ -1789,11 +1784,12 @@ html {
 }
 
 .dashboard-grid .panel {
-  min-height: 360px;
+  min-height: 320px;
 }
 
 .split-section {
-  min-height: calc(100vh - 86px);
+  min-height: auto;
+  padding-top: clamp(34px, 5vw, 64px);
 }
 
 .partners-band {
@@ -1814,7 +1810,7 @@ html {
   .section,
   .dashboard-grid,
   .final-page {
-    padding-block: 42px;
+    padding-block: 32px;
   }
 }
 
@@ -1917,6 +1913,74 @@ html {
 
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Final professional spacing model */
+main {
+  overflow: hidden;
+}
+
+.section {
+  padding-top: clamp(38px, 5vw, 70px);
+  padding-bottom: clamp(38px, 5vw, 70px);
+}
+
+.section-heading {
+  margin-bottom: clamp(18px, 2.6vw, 32px);
+}
+
+.challenge-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch;
+}
+
+.challenge-card {
+  height: 100%;
+}
+
+.dashboard-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.split-section {
+  padding-top: clamp(38px, 5vw, 70px);
+  padding-bottom: clamp(38px, 5vw, 70px);
+}
+
+.final-page {
+  display: grid;
+  gap: clamp(22px, 3vw, 34px);
+  padding-top: clamp(38px, 5vw, 70px);
+  padding-bottom: clamp(38px, 5vw, 70px);
+}
+
+@media (max-width: 1180px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .updates-panel {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .section,
+  .dashboard-grid,
+  .split-section,
+  .final-page {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .updates-panel {
+    grid-column: auto;
   }
 }
 
