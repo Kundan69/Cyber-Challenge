@@ -20,11 +20,11 @@ function renderChallenge(challenge) {
   const sections = challenge.contentSections || [];
 
   detail.innerHTML = `
-    <section class="challenge-hero-detail theme-${challenge.theme || slugify(challenge.title)}">
+    <section class="challenge-hero-detail reveal-on-scroll theme-${challenge.theme || slugify(challenge.title)}">
       <div class="challenge-hero-layout">
         <div>
           <p class="section-kicker">${challenge.status} Challenge</p>
-          <h1>${challenge.title}</h1>
+          <h1 class="glitch-title" data-text="${challenge.title}">${challenge.title}</h1>
           <p>${overview}</p>
           <div class="hero-actions">
             <a class="primary-button large" href="/#register">Register Now</a>
@@ -35,14 +35,14 @@ function renderChallenge(challenge) {
       </div>
     </section>
 
-    <section class="challenge-overview-strip">
+    <section class="challenge-overview-strip reveal-on-scroll">
       <div><span>Status</span><strong>${challenge.status}</strong></div>
       <div><span>Deadline</span><strong>${formatDate(challenge.date)}</strong></div>
       <div><span>Location</span><strong>${challenge.location || "TBD"}</strong></div>
       <div><span>Category</span><strong>${challenge.category}</strong></div>
     </section>
 
-    <section class="challenge-info-grid">
+    <section class="challenge-info-grid reveal-on-scroll">
       <article class="panel">
         <p class="section-kicker">Overview</p>
         <h2>${challenge.category}</h2>
@@ -67,7 +67,7 @@ function renderChallenge(challenge) {
       </article>
     </section>
 
-    <section class="challenge-content">
+    <section class="challenge-content reveal-on-scroll">
       <div class="section-heading">
         <div>
           <p class="section-kicker">Complete Challenge Brief</p>
@@ -83,6 +83,27 @@ function renderChallenge(challenge) {
       `).join("")}
     </section>
   `;
+}
+
+function initScrollReveal() {
+  document.body.classList.add("effects-ready");
+  const nodes = document.querySelectorAll(".reveal-on-scroll, .panel, .brief-card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+  nodes.forEach((node) => observer.observe(node));
+}
+
+function initPointerGlow() {
+  window.addEventListener("pointermove", (event) => {
+    document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+  }, { passive: true });
 }
 
 async function loadChallenge() {
@@ -106,9 +127,11 @@ async function loadChallenge() {
 
   document.title = `${challenge.title} | Cyber Challenge India`;
   renderChallenge(challenge);
+  initScrollReveal();
 }
 
 loadChallenge();
+initPointerGlow();
 
 document.querySelector("[data-nav-toggle]").addEventListener("click", () => {
   document.body.classList.toggle("nav-open");

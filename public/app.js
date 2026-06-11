@@ -34,6 +34,7 @@ function renderSite(site) {
 
   document.querySelector("[data-challenges]").innerHTML = site.challenges.map((challenge, index) => `
     <a class="challenge-card theme-${challenge.theme || slugify(challenge.title)}" href="/challenge.html?id=${slugify(challenge.title)}">
+      <span class="challenge-art" aria-hidden="true"></span>
       <span class="challenge-status">${challenge.status}</span>
       <span class="challenge-icon">
         ${challenge.logo ? `<img src="${challenge.logo}" alt="${challenge.title} logo">` : iconSet[index % iconSet.length]}
@@ -92,11 +93,33 @@ function renderSite(site) {
   `;
 }
 
+function initScrollReveal() {
+  document.body.classList.add("effects-ready");
+  const nodes = document.querySelectorAll(".reveal-on-scroll, .challenge-card, .panel, .event-card, .contact-card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16 });
+  nodes.forEach((node) => observer.observe(node));
+}
+
+function initPointerGlow() {
+  window.addEventListener("pointermove", (event) => {
+    document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+  }, { passive: true });
+}
+
 async function loadSite() {
   let response = await fetch("/api/site");
   if (!response.ok) response = await fetch("/site-data.json");
   const site = await response.json();
   renderSite(site);
+  initScrollReveal();
 }
 
 async function submitRegistration(event) {
@@ -157,6 +180,7 @@ document.querySelector("[data-nav-toggle]").addEventListener("click", () => {
 document.querySelectorAll(".main-nav a").forEach((link) => {
   link.addEventListener("click", () => document.body.classList.remove("nav-open"));
 });
+initPointerGlow();
 loadSite().catch(() => {
   document.querySelector("[data-form-status]").textContent = "Unable to load site data.";
 });

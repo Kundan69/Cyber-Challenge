@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+    <div class="ambient-cyber-bg" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Cyber Challenge India home">
         <span class="brand-mark image-brand"><img src="/assets/cyber-logo.png" alt="Cyber Challenge India logo"></span>
@@ -31,7 +34,7 @@
     </header>
 
     <main id="home">
-      <section class="hero">
+      <section class="hero reveal-on-scroll">
         <div class="hero-visual" aria-hidden="true">
           <div class="neural-field">
             <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -62,7 +65,7 @@
         </div>
         <div class="hero-copy">
           <p class="section-kicker" data-brand-badge>Cyber Defence Command</p>
-          <h1 data-brand-headline>Defending India's Digital Frontier</h1>
+          <h1 class="glitch-title" data-brand-headline data-text="Defending India's Digital Frontier">Defending India's Digital Frontier</h1>
           <p class="hero-summary" data-brand-summary>
             A national platform for innovators, researchers and cyber warriors to collaborate, compete and strengthen India's digital future.
           </p>
@@ -88,7 +91,7 @@
         </div>
       </section>
 
-      <section class="section" id="challenges">
+      <section class="section reveal-on-scroll" id="challenges">
         <div class="section-heading">
           <p class="section-kicker">Active Challenges</p>
           <a href="#register">Register for a challenge</a>
@@ -96,7 +99,7 @@
         <div class="challenge-grid" data-challenges></div>
       </section>
 
-      <section class="dashboard-grid" id="about">
+      <section class="dashboard-grid reveal-on-scroll" id="about">
         <article class="panel mission-panel">
           <p class="section-kicker">Mission Objectives</p>
           <div class="objective-grid" data-objectives></div>
@@ -115,7 +118,7 @@
         </article>
       </section>
 
-      <section class="section split-section" id="events">
+      <section class="section split-section reveal-on-scroll" id="events">
         <div>
           <p class="section-kicker">Command Calendar</p>
           <h2>Events built for cyber warriors, researchers and campus teams.</h2>
@@ -126,7 +129,7 @@
         <div class="event-list" data-events></div>
       </section>
 
-      <section class="final-page" id="contact">
+      <section class="final-page reveal-on-scroll" id="contact">
         <div class="partners-band" id="partners">
           <p>Our Partners</p>
           <div class="partner-marquee">

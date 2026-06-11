@@ -1728,6 +1728,308 @@ td {
   }
 }
 
+/* Premium cyber motion and interaction layer */
+.ambient-cyber-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient-cyber-bg span {
+  position: absolute;
+  width: 42vw;
+  height: 42vw;
+  min-width: 360px;
+  min-height: 360px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.12;
+  animation: ambient-orbit 18s ease-in-out infinite alternate;
+}
+
+.ambient-cyber-bg span:nth-child(1) {
+  top: -18%;
+  left: -10%;
+  background: #19d8ff;
+}
+
+.ambient-cyber-bg span:nth-child(2) {
+  top: 18%;
+  right: -18%;
+  background: #73f5a5;
+  animation-delay: 2s;
+}
+
+.ambient-cyber-bg span:nth-child(3) {
+  bottom: -22%;
+  left: 25%;
+  background: #e0b94a;
+  animation-delay: 4s;
+}
+
+.ambient-cyber-bg span:nth-child(4) {
+  bottom: 12%;
+  right: 18%;
+  background: #0b7cff;
+  animation-delay: 6s;
+}
+
+@keyframes ambient-orbit {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+
+  to {
+    transform: translate3d(50px, -34px, 0) scale(1.12);
+  }
+}
+
+.glitch-title {
+  position: relative;
+  animation: title-flicker 4.8s ease-in-out infinite;
+}
+
+.glitch-title::before,
+.glitch-title::after {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  content: attr(data-text);
+  opacity: 0;
+}
+
+.glitch-title::before {
+  color: rgba(25, 216, 255, 0.72);
+  transform: translateX(2px);
+  clip-path: inset(12% 0 58% 0);
+  animation: glitch-slice 5.5s steps(2, end) infinite;
+}
+
+.glitch-title::after {
+  color: rgba(115, 245, 165, 0.62);
+  transform: translateX(-2px);
+  clip-path: inset(58% 0 16% 0);
+  animation: glitch-slice 6.2s steps(2, end) infinite reverse;
+}
+
+@keyframes title-flicker {
+  0%, 94%, 100% { filter: none; }
+  95% { filter: brightness(1.35); }
+  96% { filter: brightness(0.78); }
+  97% { filter: brightness(1.18); }
+}
+
+@keyframes glitch-slice {
+  0%, 88%, 100% { opacity: 0; transform: translateX(0); }
+  89% { opacity: 0.8; transform: translateX(4px); }
+  90% { opacity: 0.35; transform: translateX(-3px); }
+  91% { opacity: 0.7; transform: translateX(2px); }
+}
+
+.primary-button,
+.secondary-button,
+.compact,
+.nav-toggle,
+.modal-close {
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-button::after,
+.secondary-button::after,
+.compact::after,
+.nav-toggle::after {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+  content: "";
+}
+
+.primary-button:hover::after,
+.secondary-button:hover::after,
+.compact:hover::after,
+.nav-toggle:hover::after {
+  animation: button-scan 0.72s ease;
+}
+
+@keyframes button-scan {
+  to {
+    transform: translateX(120%) skewX(-18deg);
+  }
+}
+
+.challenge-card,
+.panel,
+.event-card,
+.contact-card,
+.brief-card,
+.registration-dialog {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.challenge-card:hover,
+.panel:hover,
+.event-card:hover,
+.contact-card:hover,
+.brief-card:hover {
+  border-color: rgba(115, 245, 165, 0.42);
+  box-shadow:
+    0 0 0 1px rgba(115, 245, 165, 0.18),
+    0 22px 60px rgba(0, 0, 0, 0.38),
+    0 0 38px rgba(25, 216, 255, 0.16);
+}
+
+.challenge-card {
+  transform-style: preserve-3d;
+}
+
+.challenge-card:hover {
+  transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-7px);
+}
+
+.challenge-art {
+  position: absolute;
+  inset: auto -18px -16px auto;
+  width: 178px;
+  height: 132px;
+  opacity: 0.22;
+  border: 1px solid rgba(115, 245, 165, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(25, 216, 255, 0.16), transparent),
+    repeating-linear-gradient(90deg, rgba(115, 245, 165, 0.1) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(0deg, rgba(25, 216, 255, 0.08) 0 1px, transparent 1px 16px);
+  transform: rotate(-5deg);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.challenge-card:hover .challenge-art {
+  opacity: 0.36;
+  transform: rotate(-2deg) translateY(-6px);
+}
+
+.challenge-card.theme-terrier .challenge-art {
+  background:
+    linear-gradient(135deg, rgba(2, 8, 8, 0.18), rgba(2, 8, 8, 0.7)),
+    url("/assets/terrier-hero.png") center / cover no-repeat;
+}
+
+.challenge-card.theme-cctns .challenge-art {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(25, 216, 255, 0.4), transparent 30%),
+    linear-gradient(135deg, rgba(5, 24, 31, 0.9), rgba(2, 10, 13, 0.9));
+}
+
+.challenge-card.theme-delhi-police .challenge-art {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(138, 92, 255, 0.34), transparent 28%),
+    linear-gradient(135deg, rgba(20, 10, 34, 0.88), rgba(2, 10, 13, 0.92));
+}
+
+.challenge-card.theme-cctv .challenge-art {
+  background:
+    radial-gradient(circle at 48% 45%, rgba(115, 245, 165, 0.34), transparent 24%),
+    conic-gradient(from 90deg, rgba(25, 216, 255, 0.35), transparent, rgba(115, 245, 165, 0.25));
+}
+
+.challenge-card.theme-eraksha .challenge-art {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(224, 185, 74, 0.36), transparent 28%),
+    linear-gradient(135deg, rgba(36, 25, 5, 0.84), rgba(2, 10, 13, 0.92));
+}
+
+.challenge-card::before,
+.panel::before,
+.event-card::before,
+.contact-card::before,
+.brief-card::after {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 0 42%, rgba(115, 245, 165, 0.14) 48%, transparent 54%);
+  content: "";
+  transition: opacity 180ms ease;
+}
+
+.challenge-card:hover::before,
+.panel:hover::before,
+.event-card:hover::before,
+.contact-card:hover::before,
+.brief-card:hover::after {
+  opacity: 1;
+  animation: surface-sweep 1s ease;
+}
+
+@keyframes surface-sweep {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+
+body.effects-ready .reveal-on-scroll,
+body.effects-ready .challenge-card,
+body.effects-ready .panel,
+body.effects-ready .event-card,
+body.effects-ready .contact-card,
+body.effects-ready .brief-card {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal-on-scroll.is-visible,
+.challenge-card.is-visible,
+.panel.is-visible,
+.event-card.is-visible,
+.contact-card.is-visible,
+.brief-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.challenge-card:nth-child(2).is-visible,
+.panel:nth-child(2).is-visible,
+.brief-card:nth-child(2).is-visible { transition-delay: 80ms; }
+.challenge-card:nth-child(3).is-visible,
+.panel:nth-child(3).is-visible,
+.brief-card:nth-child(3).is-visible { transition-delay: 140ms; }
+.challenge-card:nth-child(4).is-visible,
+.brief-card:nth-child(4).is-visible { transition-delay: 200ms; }
+.challenge-card:nth-child(5).is-visible,
+.brief-card:nth-child(5).is-visible { transition-delay: 260ms; }
+
+.window-map {
+  overflow: hidden;
+}
+
+.window-map::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(115, 245, 165, 0.12), transparent);
+  animation: map-scanline 2.4s linear infinite;
+  content: "";
+}
+
+@keyframes map-scanline {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 /* Professional page flow and final alignment polish */
 html {
   scroll-padding-top: 86px;
@@ -1754,6 +2056,269 @@ html {
 .final-page {
   width: min(100% - 40px, 1460px);
   margin: 0 auto;
+}
+
+/* Final high-tech interaction pass */
+:root {
+  --pointer-x: 50vw;
+  --pointer-y: 18vh;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 420px at var(--pointer-x) var(--pointer-y), rgba(25, 216, 255, 0.1), transparent 58%),
+    linear-gradient(90deg, rgba(115, 245, 165, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(25, 216, 255, 0.03) 1px, transparent 1px);
+  background-size: auto, 52px 52px, 52px 52px;
+  content: "";
+  animation: tactical-grid-drift 22s linear infinite;
+}
+
+.ambient-cyber-bg::before,
+.ambient-cyber-bg::after {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  content: "";
+}
+
+.ambient-cyber-bg::before {
+  opacity: 0.14;
+  background:
+    repeating-linear-gradient(115deg, transparent 0 74px, rgba(115, 245, 165, 0.18) 75px, transparent 77px),
+    radial-gradient(circle at 72% 22%, rgba(25, 216, 255, 0.2), transparent 30%);
+  animation: data-rain-drift 16s linear infinite;
+}
+
+.ambient-cyber-bg::after {
+  opacity: 0.18;
+  background:
+    linear-gradient(90deg, transparent 0 49%, rgba(115, 245, 165, 0.16) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 0 49%, rgba(25, 216, 255, 0.13) 50%, transparent 51%);
+  background-size: 240px 240px;
+  mask-image: radial-gradient(circle at 50% 30%, #000, transparent 68%);
+  animation: neural-pulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes tactical-grid-drift {
+  to { background-position: 0 0, 52px 52px, 52px 52px; }
+}
+
+@keyframes data-rain-drift {
+  to { transform: translate3d(-90px, 70px, 0); }
+}
+
+@keyframes neural-pulse {
+  from { transform: scale(0.98); filter: brightness(0.8); }
+  to { transform: scale(1.04); filter: brightness(1.18); }
+}
+
+.site-header {
+  box-shadow: 0 1px 0 rgba(115, 245, 165, 0.12), 0 18px 60px rgba(0, 0, 0, 0.28);
+}
+
+.brand-mark,
+.challenge-hero-logo,
+.challenge-icon,
+.objective-icon,
+.stat-icon {
+  animation: soft-neon-breathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes soft-neon-breathe {
+  from { box-shadow: inset 0 0 0 5px rgba(115, 245, 165, 0.06), 0 0 12px rgba(25, 216, 255, 0.08); }
+  to { box-shadow: inset 0 0 0 5px rgba(115, 245, 165, 0.12), 0 0 28px rgba(25, 216, 255, 0.2); }
+}
+
+.main-nav a {
+  position: relative;
+}
+
+.main-nav a::after {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--olive));
+  box-shadow: 0 0 16px rgba(115, 245, 165, 0.7);
+  content: "";
+  transition: left 180ms ease, right 180ms ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  left: 0;
+  right: 0;
+}
+
+.primary-button,
+.secondary-button,
+.compact {
+  border-color: rgba(115, 245, 165, 0.5);
+  box-shadow: 0 0 0 1px rgba(115, 245, 165, 0.12), 0 0 22px rgba(25, 216, 255, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.compact:hover {
+  border-color: rgba(115, 245, 165, 0.95);
+  box-shadow: 0 0 0 1px rgba(115, 245, 165, 0.4), 0 0 30px rgba(115, 245, 165, 0.28), 0 0 60px rgba(25, 216, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.section-heading h2,
+.panel h2,
+.brief-card h3 {
+  text-shadow: 0 0 18px rgba(25, 216, 255, 0.18);
+}
+
+.section-heading::before,
+.section-heading::after {
+  width: min(15vw, 140px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(115, 245, 165, 0.75), transparent);
+  box-shadow: 0 0 18px rgba(115, 245, 165, 0.45);
+  content: "";
+}
+
+.section-heading {
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-command-board,
+.challenge-overview-strip,
+.challenge-info-grid .panel,
+.challenge-content,
+.mission-panel,
+.fame-panel,
+.updates-panel,
+.contact-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-command-board::before,
+.challenge-overview-strip::before,
+.mission-panel::before,
+.fame-panel::before,
+.updates-panel::before,
+.contact-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.32;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(115, 245, 165, 0.16), transparent 25%),
+    linear-gradient(135deg, rgba(25, 216, 255, 0.06), transparent 38%);
+  content: "";
+}
+
+.challenge-card {
+  min-height: 292px;
+  isolation: isolate;
+}
+
+.challenge-card::after {
+  box-shadow: 0 0 18px currentColor;
+}
+
+.challenge-card.is-visible:hover {
+  transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-7px);
+}
+
+.panel.is-visible:hover,
+.event-card.is-visible:hover,
+.contact-card.is-visible:hover,
+.brief-card.is-visible:hover {
+  transform: translateY(-5px);
+}
+
+.challenge-art::before,
+.challenge-art::after {
+  position: absolute;
+  content: "";
+}
+
+.challenge-art::before {
+  inset: 16px;
+  border: 1px solid rgba(115, 245, 165, 0.24);
+  border-radius: 50%;
+  animation: radar-spin 6s linear infinite;
+}
+
+.challenge-art::after {
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--olive);
+  box-shadow:
+    28px -18px 0 rgba(25, 216, 255, 0.72),
+    -34px 20px 0 rgba(115, 245, 165, 0.55),
+    4px 36px 0 rgba(224, 185, 74, 0.62);
+}
+
+.challenge-card h3,
+.challenge-card p,
+.challenge-card .challenge-meta,
+.challenge-card .challenge-location,
+.challenge-card .challenge-link,
+.challenge-card .challenge-status,
+.challenge-card .challenge-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.threat-map {
+  box-shadow: inset 0 0 60px rgba(25, 216, 255, 0.08), 0 0 38px rgba(25, 216, 255, 0.1);
+}
+
+.attack-line {
+  filter: drop-shadow(0 0 8px rgba(115, 245, 165, 0.8));
+}
+
+.map-dot {
+  animation: map-dot-pulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes map-dot-pulse {
+  from { transform: scale(0.82); opacity: 0.55; }
+  to { transform: scale(1.18); opacity: 1; }
+}
+
+.partner-track {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.partner-chip:hover {
+  color: #f4fbf8;
+  border-color: rgba(115, 245, 165, 0.48);
+  box-shadow: 0 0 22px rgba(115, 245, 165, 0.14);
+}
+
+@media (max-width: 760px) {
+  .section-heading::before,
+  .section-heading::after {
+    display: none;
+  }
+
+  .challenge-card.is-visible:hover,
+  .panel.is-visible:hover,
+  .event-card.is-visible:hover,
+  .contact-card.is-visible:hover,
+  .brief-card.is-visible:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .final-page .partners-band,
@@ -2485,4 +3050,32 @@ textarea:focus {
   .challenge-hero-detail.theme-terrier h1 {
     font-size: clamp(2.35rem, 13vw, 4rem);
   }
+}
+
+/* Deployment-final cascade: keep the premium motion layer above older theme overrides */
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  opacity: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 420px at var(--pointer-x) var(--pointer-y), rgba(25, 216, 255, 0.12), transparent 58%),
+    linear-gradient(90deg, rgba(115, 245, 165, 0.038) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(25, 216, 255, 0.032) 1px, transparent 1px);
+  background-size: auto, 52px 52px, 52px 52px;
+  content: "";
+  animation: tactical-grid-drift 22s linear infinite;
+}
+
+.challenge-card.is-visible:hover {
+  transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-7px);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.compact:hover {
+  border-color: rgba(115, 245, 165, 0.95);
+  box-shadow: 0 0 0 1px rgba(115, 245, 165, 0.4), 0 0 30px rgba(115, 245, 165, 0.28), 0 0 60px rgba(25, 216, 255, 0.18);
+  transform: translateY(-2px);
 }
