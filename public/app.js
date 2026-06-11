@@ -117,6 +117,26 @@ function initPointerGlow() {
   }, { passive: true });
 }
 
+function syncMotionToggle() {
+  const enabled = localStorage.getItem("cci-motion") !== "off";
+  document.body.classList.toggle("motion-paused", !enabled);
+  document.querySelectorAll("[data-motion-toggle]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(enabled));
+    button.classList.toggle("is-off", !enabled);
+  });
+}
+
+function initMotionToggle() {
+  syncMotionToggle();
+  document.querySelectorAll("[data-motion-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const enabled = button.getAttribute("aria-pressed") !== "true";
+      localStorage.setItem("cci-motion", enabled ? "on" : "off");
+      syncMotionToggle();
+    });
+  });
+}
+
 function initPremiumMotion() {
   document.body.classList.add("motion-ready");
 
@@ -253,6 +273,7 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
   link.addEventListener("click", () => document.body.classList.remove("nav-open"));
 });
 initPointerGlow();
+initMotionToggle();
 loadSite().catch(() => {
   document.querySelector("[data-form-status]").textContent = "Unable to load site data.";
 });
