@@ -1991,6 +1991,16 @@ body.effects-ready .brief-card {
   transition: opacity 600ms ease, transform 600ms ease;
 }
 
+body.effects-ready .reveal-on-scroll.is-visible,
+body.effects-ready .challenge-card.is-visible,
+body.effects-ready .panel.is-visible,
+body.effects-ready .event-card.is-visible,
+body.effects-ready .contact-card.is-visible,
+body.effects-ready .brief-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .challenge-card:nth-child(2).is-visible,
 .panel:nth-child(2).is-visible,
 .brief-card:nth-child(2).is-visible { transition-delay: 80ms; }
@@ -2171,6 +2181,16 @@ body::before {
   border-color: rgba(115, 245, 165, 0.95);
   box-shadow: 0 0 0 1px rgba(115, 245, 165, 0.4), 0 0 30px rgba(115, 245, 165, 0.28), 0 0 60px rgba(25, 216, 255, 0.18);
   transform: translateY(-2px);
+}
+
+body.effects-ready .reveal-on-scroll.is-visible,
+body.effects-ready .challenge-card.is-visible,
+body.effects-ready .panel.is-visible,
+body.effects-ready .event-card.is-visible,
+body.effects-ready .contact-card.is-visible,
+body.effects-ready .brief-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-heading h2,

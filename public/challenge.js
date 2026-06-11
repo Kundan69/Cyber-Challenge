@@ -97,6 +97,9 @@ function initScrollReveal() {
     });
   }, { threshold: 0.14 });
   nodes.forEach((node) => observer.observe(node));
+  window.setTimeout(() => {
+    nodes.forEach((node) => node.classList.add("is-visible"));
+  }, 900);
 }
 
 function initPointerGlow() {
