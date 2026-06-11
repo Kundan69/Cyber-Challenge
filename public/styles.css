@@ -1728,6 +1728,96 @@ td {
   }
 }
 
+/* One-screen page flow and final alignment polish */
+html {
+  scroll-padding-top: 86px;
+}
+
+@media (min-width: 900px) {
+  main > .hero,
+  main > .section,
+  main > .dashboard-grid,
+  main > .final-page {
+    min-height: calc(100vh - 86px);
+    scroll-snap-align: start;
+  }
+
+  main > .section,
+  main > .dashboard-grid,
+  main > .final-page {
+    display: grid;
+    align-content: center;
+  }
+}
+
+.section,
+.dashboard-grid,
+.final-page {
+  padding-block: clamp(52px, 7vw, 86px);
+}
+
+.final-page {
+  width: min(100% - 40px, 1460px);
+  margin: 0 auto;
+}
+
+.final-page .partners-band,
+.final-page .contact-section {
+  width: 100%;
+}
+
+.code-rain {
+  top: auto;
+  right: auto;
+  left: clamp(20px, 6vw, 96px);
+  bottom: 34px;
+  z-index: 1;
+  max-width: min(520px, 42vw);
+  opacity: 0.8;
+}
+
+.window-map {
+  z-index: 3;
+}
+
+.hero-copy {
+  z-index: 4;
+}
+
+.dashboard-grid {
+  align-items: stretch;
+}
+
+.dashboard-grid .panel {
+  min-height: 360px;
+}
+
+.split-section {
+  min-height: calc(100vh - 86px);
+}
+
+.partners-band {
+  padding-top: 0;
+}
+
+.contact-section {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1180px) {
+  .code-rain {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .section,
+  .dashboard-grid,
+  .final-page {
+    padding-block: 42px;
+  }
+}
+
 /* Registration modal and alignment refinements */
 .modal-open {
   overflow: hidden;
