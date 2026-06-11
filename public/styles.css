@@ -2001,6 +2001,264 @@ body.effects-ready .brief-card.is-visible {
   transform: translateY(0);
 }
 
+/* Webflow-style smooth motion and premium interaction system */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--olive), var(--gold));
+  box-shadow: 0 0 18px rgba(115, 245, 165, 0.65);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+.motion-ready .hero-copy,
+.motion-ready .section-heading,
+.motion-ready .hero-command-board,
+.motion-ready .challenge-grid,
+.motion-ready .dashboard-grid,
+.motion-ready .event-list,
+.motion-ready .final-page,
+.motion-ready .challenge-hero-layout,
+.motion-ready .challenge-overview-strip,
+.motion-ready .challenge-info-grid,
+.motion-ready .challenge-content {
+  animation: section-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.motion-ready .section-heading { animation-delay: 70ms; }
+.motion-ready .challenge-grid,
+.motion-ready .challenge-info-grid { animation-delay: 120ms; }
+.motion-ready .dashboard-grid,
+.motion-ready .challenge-content { animation-delay: 160ms; }
+
+@keyframes section-rise {
+  from {
+    opacity: 0;
+    filter: blur(16px);
+    transform: translate3d(0, 44px, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+body.effects-ready .reveal-on-scroll:not(.is-visible),
+body.effects-ready .challenge-card:not(.is-visible),
+body.effects-ready .panel:not(.is-visible),
+body.effects-ready .event-card:not(.is-visible),
+body.effects-ready .contact-card:not(.is-visible),
+body.effects-ready .brief-card:not(.is-visible),
+body.effects-ready .objective:not(.is-visible),
+body.effects-ready .winner:not(.is-visible),
+body.effects-ready .update:not(.is-visible),
+body.effects-ready .stat:not(.is-visible),
+body.effects-ready .hero-command-board div:not(.is-visible),
+body.effects-ready .challenge-overview-strip div:not(.is-visible) {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translate3d(0, 52px, 0) scale(0.97);
+}
+
+body.effects-ready .reveal-on-scroll.is-visible,
+body.effects-ready .challenge-card.is-visible,
+body.effects-ready .panel.is-visible,
+body.effects-ready .event-card.is-visible,
+body.effects-ready .contact-card.is-visible,
+body.effects-ready .brief-card.is-visible,
+body.effects-ready .objective.is-visible,
+body.effects-ready .winner.is-visible,
+body.effects-ready .update.is-visible,
+body.effects-ready .stat.is-visible,
+body.effects-ready .hero-command-board div.is-visible,
+body.effects-ready .challenge-overview-strip div.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity 850ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 850ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-ready .hero-visual,
+.motion-ready .threat-window,
+.motion-ready .hero-command-board,
+.motion-ready .mission-panel,
+.motion-ready .fame-panel,
+.motion-ready .updates-panel,
+.motion-ready .challenge-hero-detail,
+.motion-ready .challenge-hero-logo,
+.motion-ready .challenge-overview-strip {
+  transform: translate3d(0, var(--float-y, 0), 0);
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.motion-ready .challenge-card,
+.motion-ready .panel,
+.motion-ready .event-card,
+.motion-ready .contact-card,
+.motion-ready .brief-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --shine-x: 50%;
+  --shine-y: 50%;
+  will-change: transform, box-shadow;
+}
+
+.motion-ready .challenge-card::before,
+.motion-ready .panel::before,
+.motion-ready .event-card::before,
+.motion-ready .contact-card::before,
+.motion-ready .brief-card::before {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--shine-x) var(--shine-y), rgba(255, 255, 255, 0.2), transparent 24%),
+    linear-gradient(115deg, transparent 0 36%, rgba(115, 245, 165, 0.16) 48%, transparent 60%);
+  content: "";
+  transition: opacity 220ms ease;
+}
+
+.motion-ready .challenge-card:hover::before,
+.motion-ready .panel:hover::before,
+.motion-ready .event-card:hover::before,
+.motion-ready .contact-card:hover::before,
+.motion-ready .brief-card:hover::before {
+  opacity: 1;
+}
+
+.motion-ready .challenge-card.is-visible:hover,
+.motion-ready .panel.is-visible:hover,
+.motion-ready .event-card.is-visible:hover,
+.motion-ready .contact-card.is-visible:hover,
+.motion-ready .brief-card.is-visible:hover {
+  transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translate3d(0, -9px, 0);
+  box-shadow:
+    0 0 0 1px rgba(115, 245, 165, 0.34),
+    0 28px 80px rgba(0, 0, 0, 0.46),
+    0 0 70px rgba(25, 216, 255, 0.2);
+}
+
+.motion-ready .primary-button,
+.motion-ready .secondary-button,
+.motion-ready .compact {
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease,
+    background 260ms ease;
+}
+
+.motion-ready .primary-button:hover,
+.motion-ready .secondary-button:hover,
+.motion-ready .compact:hover {
+  transform: translate3d(0, -4px, 0) scale(1.015);
+}
+
+.motion-ready .primary-button:active,
+.motion-ready .secondary-button:active,
+.motion-ready .compact:active {
+  transform: translate3d(0, -1px, 0) scale(0.99);
+}
+
+.hero::before {
+  animation: hero-aurora 12s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  animation: hero-scan-drift 16s linear infinite;
+}
+
+@keyframes hero-aurora {
+  from { transform: translate3d(-18px, -10px, 0) scale(1); opacity: 0.62; }
+  to { transform: translate3d(28px, 16px, 0) scale(1.06); opacity: 0.92; }
+}
+
+@keyframes hero-scan-drift {
+  to { background-position: 180px 90px; }
+}
+
+.threat-window,
+.window-map,
+.challenge-card,
+.panel,
+.brief-card,
+.contact-card {
+  backdrop-filter: blur(18px) saturate(1.15);
+}
+
+.challenge-art {
+  animation: card-orbit 6s ease-in-out infinite alternate;
+}
+
+@keyframes card-orbit {
+  from { transform: rotate(-6deg) translate3d(0, 0, 0); }
+  to { transform: rotate(-2deg) translate3d(-12px, -10px, 0); }
+}
+
+.partner-track {
+  animation-duration: 36s;
+}
+
+.partner-marquee:hover .partner-track {
+  animation-play-state: paused;
+}
+
+.winner,
+.objective,
+.stat,
+.update {
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.winner:hover,
+.objective:hover,
+.stat:hover,
+.update:hover {
+  border-color: rgba(115, 245, 165, 0.44);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28), 0 0 32px rgba(25, 216, 255, 0.12);
+  transform: translate3d(0, -6px, 0);
+}
+
+@media (max-width: 760px) {
+  .motion-ready .challenge-card.is-visible:hover,
+  .motion-ready .panel.is-visible:hover,
+  .motion-ready .event-card.is-visible:hover,
+  .motion-ready .contact-card.is-visible:hover,
+  .motion-ready .brief-card.is-visible:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    display: none;
+  }
+
+  .motion-ready .hero-visual,
+  .motion-ready .threat-window,
+  .motion-ready .hero-command-board,
+  .motion-ready .mission-panel,
+  .motion-ready .fame-panel,
+  .motion-ready .updates-panel,
+  .motion-ready .challenge-hero-detail,
+  .motion-ready .challenge-hero-logo,
+  .motion-ready .challenge-overview-strip {
+    transform: none;
+  }
+}
+
 .challenge-card:nth-child(2).is-visible,
 .panel:nth-child(2).is-visible,
 .brief-card:nth-child(2).is-visible { transition-delay: 80ms; }

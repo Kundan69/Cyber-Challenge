@@ -87,7 +87,7 @@ function renderChallenge(challenge) {
 
 function initScrollReveal() {
   document.body.classList.add("effects-ready");
-  const nodes = document.querySelectorAll(".reveal-on-scroll, .panel, .brief-card");
+  const nodes = document.querySelectorAll(".reveal-on-scroll, .panel, .brief-card, .challenge-overview-strip div");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -107,6 +107,73 @@ function initPointerGlow() {
     document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
     document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
   }, { passive: true });
+}
+
+function initPremiumMotion() {
+  document.body.classList.add("motion-ready");
+
+  let progress = document.querySelector(".scroll-progress");
+  if (!progress) {
+    progress = document.createElement("div");
+    progress.className = "scroll-progress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
+  }
+
+  document.querySelectorAll('a[href^="#"]:not([data-smooth-bound])').forEach((link) => {
+    link.dataset.smoothBound = "true";
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      event.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 86;
+      window.scrollTo({ top, behavior: "smooth" });
+      history.replaceState(null, "", link.getAttribute("href"));
+    });
+  });
+
+  const parallaxNodes = document.querySelectorAll(".challenge-hero-detail, .challenge-hero-logo, .challenge-overview-strip");
+  const updateScroll = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = max > 0 ? window.scrollY / max : 0;
+    progress.style.transform = `scaleX(${ratio})`;
+    parallaxNodes.forEach((node, index) => {
+      const rect = node.getBoundingClientRect();
+      const offset = (window.innerHeight / 2 - rect.top - rect.height / 2) * 0.018 * ((index % 3) + 1);
+      node.style.setProperty("--float-y", `${Math.max(-18, Math.min(18, offset))}px`);
+    });
+  };
+
+  if (!document.body.dataset.scrollMotionBound) {
+    document.body.dataset.scrollMotionBound = "true";
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateScroll();
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+  updateScroll();
+
+  document.querySelectorAll(".panel:not([data-tilt-bound]), .brief-card:not([data-tilt-bound])").forEach((card) => {
+    card.dataset.tiltBound = "true";
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      card.style.setProperty("--shine-x", `${x * 100}%`);
+      card.style.setProperty("--shine-y", `${y * 100}%`);
+      card.style.setProperty("--tilt-x", `${(0.5 - y) * 5}deg`);
+      card.style.setProperty("--tilt-y", `${(x - 0.5) * 5}deg`);
+    }, { passive: true });
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--tilt-x", "0deg");
+      card.style.setProperty("--tilt-y", "0deg");
+    });
+  });
 }
 
 async function loadChallenge() {
@@ -131,10 +198,12 @@ async function loadChallenge() {
   document.title = `${challenge.title} | Cyber Challenge India`;
   renderChallenge(challenge);
   initScrollReveal();
+  initPremiumMotion();
 }
 
 loadChallenge();
 initPointerGlow();
+initPremiumMotion();
 
 document.querySelector("[data-nav-toggle]").addEventListener("click", () => {
   document.body.classList.toggle("nav-open");

@@ -95,7 +95,7 @@ function renderSite(site) {
 
 function initScrollReveal() {
   document.body.classList.add("effects-ready");
-  const nodes = document.querySelectorAll(".reveal-on-scroll, .challenge-card, .panel, .event-card, .contact-card");
+  const nodes = document.querySelectorAll(".reveal-on-scroll, .challenge-card, .panel, .event-card, .contact-card, .objective, .winner, .update, .stat, .hero-command-board div");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -117,12 +117,81 @@ function initPointerGlow() {
   }, { passive: true });
 }
 
+function initPremiumMotion() {
+  document.body.classList.add("motion-ready");
+
+  let progress = document.querySelector(".scroll-progress");
+  if (!progress) {
+    progress = document.createElement("div");
+    progress.className = "scroll-progress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
+  }
+
+  document.querySelectorAll('a[href^="#"]:not([href="#register"]):not([data-smooth-bound])').forEach((link) => {
+    link.dataset.smoothBound = "true";
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      event.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 86;
+      window.scrollTo({ top, behavior: "smooth" });
+      history.replaceState(null, "", link.getAttribute("href"));
+    });
+  });
+
+  const parallaxNodes = document.querySelectorAll(".hero-visual, .threat-window, .hero-command-board, .mission-panel, .fame-panel, .updates-panel");
+  const updateScroll = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = max > 0 ? window.scrollY / max : 0;
+    progress.style.transform = `scaleX(${ratio})`;
+    document.documentElement.style.setProperty("--page-scroll", `${window.scrollY}px`);
+    parallaxNodes.forEach((node, index) => {
+      const rect = node.getBoundingClientRect();
+      const offset = (window.innerHeight / 2 - rect.top - rect.height / 2) * 0.025 * ((index % 3) + 1);
+      node.style.setProperty("--float-y", `${Math.max(-24, Math.min(24, offset))}px`);
+    });
+  };
+
+  if (!document.body.dataset.scrollMotionBound) {
+    document.body.dataset.scrollMotionBound = "true";
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateScroll();
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+  updateScroll();
+
+  document.querySelectorAll(".challenge-card:not([data-tilt-bound]), .panel:not([data-tilt-bound]), .event-card:not([data-tilt-bound]), .contact-card:not([data-tilt-bound])").forEach((card) => {
+    card.dataset.tiltBound = "true";
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      card.style.setProperty("--shine-x", `${x * 100}%`);
+      card.style.setProperty("--shine-y", `${y * 100}%`);
+      card.style.setProperty("--tilt-x", `${(0.5 - y) * 7}deg`);
+      card.style.setProperty("--tilt-y", `${(x - 0.5) * 7}deg`);
+    }, { passive: true });
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--tilt-x", "0deg");
+      card.style.setProperty("--tilt-y", "0deg");
+    });
+  });
+}
+
 async function loadSite() {
   let response = await fetch("/api/site");
   if (!response.ok) response = await fetch("/site-data.json");
   const site = await response.json();
   renderSite(site);
   initScrollReveal();
+  initPremiumMotion();
 }
 
 async function submitRegistration(event) {
@@ -187,6 +256,7 @@ initPointerGlow();
 loadSite().catch(() => {
   document.querySelector("[data-form-status]").textContent = "Unable to load site data.";
 });
+initPremiumMotion();
 
 if (window.location.hash === "#register") {
   openRegistration();
