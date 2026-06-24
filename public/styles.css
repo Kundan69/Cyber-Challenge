@@ -2441,6 +2441,499 @@ body::before {
   transform: translateY(-2px);
 }
 
+/* Final stabilization pass: alignment, map, theme visibility */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 104px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.9fr) minmax(460px, 1.4fr) auto;
+  align-items: center;
+  gap: clamp(12px, 2vw, 26px);
+  min-height: 78px;
+  padding: 12px clamp(14px, 2.4vw, 28px);
+}
+
+.brand {
+  min-width: 0;
+}
+
+.brand span:last-child {
+  min-width: 0;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.main-nav {
+  justify-content: center;
+  min-width: 0;
+}
+
+.main-nav a {
+  white-space: nowrap;
+}
+
+.header-actions {
+  justify-content: flex-end;
+  min-width: max-content;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.85fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 72px);
+  min-height: min(780px, calc(100vh - 118px));
+  padding: clamp(36px, 6vw, 86px);
+}
+
+.hero-copy {
+  max-width: 820px;
+  padding: 0;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  max-width: 820px;
+  text-wrap: balance;
+}
+
+.hero-summary {
+  max-width: 680px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 520px;
+  width: 100%;
+  order: 2;
+}
+
+.hero-copy {
+  order: 1;
+}
+
+.command-window {
+  overflow: hidden;
+}
+
+.window-map {
+  left: 50%;
+  top: 50%;
+  width: min(520px, 92%);
+  height: min(360px, 68%);
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(115, 245, 165, 0.28);
+}
+
+.window-map strong {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 3;
+  color: #f4fbf8;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.map-live-badge {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  z-index: 4;
+}
+
+.india-map-shape {
+  position: relative;
+  z-index: 1;
+  width: 48%;
+  max-width: 190px;
+  opacity: 0.78;
+  filter: drop-shadow(0 0 18px rgba(25, 216, 255, 0.34));
+}
+
+.threat-dot,
+.attack-line {
+  z-index: 3;
+}
+
+.window-feed {
+  right: clamp(4px, 4vw, 54px);
+  bottom: clamp(10px, 6vw, 54px);
+  width: min(360px, 72%);
+}
+
+.code-rain {
+  left: clamp(4px, 4vw, 44px);
+  top: clamp(12px, 5vw, 58px);
+  max-width: min(420px, 72%);
+}
+
+.section,
+.dashboard-grid,
+.final-page,
+.challenge-detail-shell {
+  width: min(100% - 36px, 1420px);
+  margin-inline: auto;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.challenge-grid {
+  grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+  align-items: stretch;
+}
+
+.challenge-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 342px;
+  padding: 22px;
+}
+
+.challenge-card h3 {
+  margin-top: auto;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.challenge-card p {
+  min-height: 0;
+  line-height: 1.55;
+}
+
+.challenge-meta,
+.challenge-location,
+.challenge-link {
+  display: block;
+}
+
+.dashboard-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+}
+
+.panel,
+.event-card,
+.contact-card,
+.brief-card,
+.objective,
+.winner,
+.update {
+  overflow-wrap: anywhere;
+}
+
+.event-list,
+.contact-grid,
+.objective-grid {
+  align-items: stretch;
+}
+
+.challenge-overview-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.challenge-hero-detail {
+  width: min(100% - 36px, 1420px);
+  margin: 24px auto;
+}
+
+.challenge-content {
+  width: min(100% - 36px, 1420px);
+  margin-inline: auto;
+}
+
+.theme-light {
+  color: #071527;
+}
+
+body.theme-light {
+  color: #071527;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(15, 199, 255, 0.2), transparent 28%),
+    radial-gradient(circle at 86% 8%, rgba(11, 104, 255, 0.14), transparent 28%),
+    linear-gradient(180deg, #f8fdff 0%, #eef8ff 52%, #ffffff 100%);
+}
+
+body.theme-light .site-header,
+body.theme-light .hero,
+body.theme-light .command-window,
+body.theme-light .hero-command-board div,
+body.theme-light .panel,
+body.theme-light .challenge-card,
+body.theme-light .event-card,
+body.theme-light .contact-section,
+body.theme-light .contact-card,
+body.theme-light .brief-card,
+body.theme-light .challenge-overview-strip,
+body.theme-light .challenge-overview-strip div,
+body.theme-light .challenge-hero-detail,
+body.theme-light .challenge-hero-logo,
+body.theme-light .registration-dialog,
+body.theme-light .registration-form,
+body.theme-light .login-card,
+body.theme-light .admin-panel,
+body.theme-light .objective,
+body.theme-light .winner,
+body.theme-light .update,
+body.theme-light .partner-chip {
+  color: #071527;
+  border-color: rgba(11, 104, 255, 0.16);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(234, 247, 255, 0.96)),
+    radial-gradient(circle at 12% 0%, rgba(15, 199, 255, 0.13), transparent 32%);
+  box-shadow: 0 16px 44px rgba(18, 71, 128, 0.12);
+}
+
+body.theme-light .challenge-card.theme-terrier,
+body.theme-light .challenge-card.theme-cctns,
+body.theme-light .challenge-card.theme-delhi-police,
+body.theme-light .challenge-card.theme-cctv,
+body.theme-light .challenge-card.theme-eraksha {
+  color: #071527;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(15, 199, 255, 0.2), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(231, 246, 255, 0.97));
+}
+
+body.theme-light .challenge-card.theme-terrier {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(231, 246, 255, 0.95)),
+    url("/assets/terrier-hero.png") center / cover no-repeat;
+}
+
+body.theme-light h1,
+body.theme-light h2,
+body.theme-light h3,
+body.theme-light h4,
+body.theme-light .brand strong,
+body.theme-light .challenge-card h3,
+body.theme-light .event-card h3,
+body.theme-light .brief-card h3,
+body.theme-light .update h3,
+body.theme-light .panel h2,
+body.theme-light .contact-card strong,
+body.theme-light .winner strong,
+body.theme-light .objective strong,
+body.theme-light .stat strong,
+body.theme-light .challenge-overview-strip strong {
+  color: #071527;
+  text-shadow: none;
+}
+
+body.theme-light .hero-copy h1,
+body.theme-light .challenge-hero-detail h1,
+body.theme-light .challenge-hero-detail.theme-terrier h1 {
+  background: linear-gradient(180deg, #061629 0%, #0b68ff 58%, #0fc7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body.theme-light p,
+body.theme-light li,
+body.theme-light .hero-summary,
+body.theme-light .challenge-card p,
+body.theme-light .event-card p,
+body.theme-light .panel p,
+body.theme-light .split-section p,
+body.theme-light .brief-card p,
+body.theme-light .detail-list,
+body.theme-light .detail-list li,
+body.theme-light .winner span,
+body.theme-light .stat span,
+body.theme-light .contact-card span,
+body.theme-light .challenge-location,
+body.theme-light .update p,
+body.theme-light .registration-intro p:not(.section-kicker),
+body.theme-light .challenge-hero-detail p:not(.section-kicker) {
+  color: #465d73;
+}
+
+body.theme-light .brand small,
+body.theme-light .section-kicker,
+body.theme-light .section-kicker::before,
+body.theme-light .main-nav a,
+body.theme-light .challenge-meta,
+body.theme-light .challenge-link,
+body.theme-light label,
+body.theme-light .contact-card strong,
+body.theme-light .challenge-overview-strip span,
+body.theme-light .challenge-overview-strip strong {
+  color: #075fd8;
+}
+
+body.theme-light .window-map strong {
+  color: #063f9f;
+}
+
+body.theme-light .challenge-status,
+body.theme-light .partners-band p,
+body.theme-light .primary-button,
+body.theme-light .compact {
+  color: #ffffff;
+  background: linear-gradient(90deg, #0b68ff, #0fc7ff);
+}
+
+body.theme-light .secondary-button {
+  color: #07508f;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+body.theme-light .challenge-icon,
+body.theme-light .objective-icon,
+body.theme-light .stat-icon,
+body.theme-light .update-date {
+  color: #0b68ff;
+  border-color: rgba(11, 104, 255, 0.22);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+body.theme-light .winner-badge {
+  color: #ffffff;
+  background: linear-gradient(180deg, #0fc7ff, #0b68ff);
+}
+
+body.theme-light input,
+body.theme-light select,
+body.theme-light textarea {
+  color: #071527;
+  border-color: rgba(11, 104, 255, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-light .site-footer {
+  color: #465d73;
+  border-top-color: rgba(11, 104, 255, 0.14);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 1180px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .main-nav {
+    grid-column: 1 / -1;
+    order: 3;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-visual {
+    order: 1;
+    min-height: 440px;
+  }
+
+  .hero-copy {
+    order: 2;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-overview-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 120px;
+  }
+
+  .site-header {
+    width: calc(100% - 16px);
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    gap: 10px;
+  }
+
+  .header-actions {
+    min-width: 0;
+    justify-content: space-between;
+  }
+
+  .header-actions .primary-button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .hero,
+  .section,
+  .dashboard-grid,
+  .final-page,
+  .challenge-detail-shell,
+  .challenge-hero-detail,
+  .challenge-content {
+    width: min(100% - 20px, 1420px);
+  }
+
+  .hero {
+    padding: 28px 18px;
+    gap: 24px;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .window-map {
+    width: 94%;
+    height: 280px;
+  }
+
+  .window-feed,
+  .code-rain,
+  .drone-visual {
+    opacity: 0.52;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.55rem, 15vw, 4.5rem);
+  }
+
+  .hero-actions,
+  .stats-row,
+  .challenge-overview-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+}
+
 /* Final light-theme contrast and smooth-scroll fixes */
 html {
   scroll-behavior: smooth;
