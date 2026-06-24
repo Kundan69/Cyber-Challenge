@@ -12,7 +12,7 @@
     </div>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Cyber Challenge India home">
-        <span class="brand-mark image-brand"><img src="/assets/cyber-logo.png" alt="Cyber Challenge India logo"></span>
+        <span class="brand-mark image-brand"><img src="/assets/cyberlogo.svg" alt="Cyber Challenge India logo"></span>
         <span>
           <strong data-brand-name>Cyber Challenge India</strong>
           <small data-brand-tagline>Defend - Innovate - Secure</small>
@@ -51,7 +51,35 @@
           <div class="radar-sweep"></div>
           <div class="command-window window-map">
             <div class="map-live-badge">Live</div>
-            <div class="india-map-shape"></div>
+            <svg class="threat-map-svg" viewBox="0 0 520 330" role="img" aria-label="Live cyber threat map">
+              <defs>
+                <linearGradient id="mapGlow" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#73f5a5"/>
+                  <stop offset="1" stop-color="#19d8ff"/>
+                </linearGradient>
+              </defs>
+              <path class="map-continent" d="M60 118l34-26 58 8 34-19 59 19 28 40-21 31-67 8-37 26-66-15-32-32z"/>
+              <path class="map-continent" d="M318 84l58-14 68 18 26 42-22 49-60 16-52-22-33-42z"/>
+              <path class="map-continent india-region" d="M306 142l24 8 16 26-11 36-22 38-21-33-7-38z"/>
+              <path class="map-continent" d="M126 246l38-18 56 14 30 36-28 28-70-8-34-24z"/>
+              <path class="map-continent" d="M378 238l42-14 44 18 12 38-34 26-56-14z"/>
+              <g class="map-grid-lines">
+                <path d="M40 110h440M40 170h440M40 230h440M130 50v230M260 42v250M390 50v230"/>
+              </g>
+              <g class="map-routes">
+                <path d="M108 118 C176 88, 246 100, 314 166"/>
+                <path d="M430 118 C380 144, 352 164, 314 166"/>
+                <path d="M178 266 C236 232, 278 210, 314 166"/>
+                <path d="M428 272 C390 228, 356 196, 314 166"/>
+              </g>
+              <g class="map-nodes">
+                <circle cx="108" cy="118" r="6"/>
+                <circle cx="430" cy="118" r="6"/>
+                <circle cx="178" cy="266" r="6"/>
+                <circle cx="428" cy="272" r="6"/>
+                <circle class="india-node" cx="314" cy="166" r="9"/>
+              </g>
+            </svg>
             <span class="threat-dot dot-1"></span>
             <span class="threat-dot dot-2"></span>
             <span class="threat-dot dot-3"></span>
@@ -101,11 +129,32 @@
           <a href="#register">Register for a challenge</a>
         </div>
         <div class="challenge-grid" data-challenges></div>
+        <div class="impact-strip" aria-label="Program impact metrics">
+          <div class="impact-metric">
+            <span data-counter data-target="50000">0</span>
+            <strong>Participants</strong>
+          </div>
+          <div class="impact-metric">
+            <span data-counter data-target="120">0</span>
+            <strong>Innovation Briefs</strong>
+          </div>
+          <div class="impact-metric">
+            <span data-counter data-target="75">0</span>
+            <strong>Awards Pool</strong>
+          </div>
+        </div>
       </section>
 
       <section class="dashboard-grid reveal-on-scroll" id="about">
         <article class="panel mission-panel">
           <p class="section-kicker">Mission Objectives</p>
+          <div class="sovereignty-visual" aria-hidden="true">
+            <span class="sovereignty-core"></span>
+            <span class="orbit orbit-a"></span>
+            <span class="orbit orbit-b"></span>
+            <span class="orbit orbit-c"></span>
+          </div>
+          <h2>Core Sovereignty Grid</h2>
           <div class="objective-grid" data-objectives></div>
           <a class="primary-button compact" href="#challenges">Explore Missions</a>
         </article>

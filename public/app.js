@@ -117,6 +117,42 @@ function initPointerGlow() {
   }, { passive: true });
 }
 
+function initCounters() {
+  const counters = document.querySelectorAll("[data-counter]");
+  const formatValue = (value, target) => {
+    if (target >= 1000) return `${Math.round(value / 1000)}K+`;
+    if (target === 75) return `${Math.round(value)}L+`;
+    return `${Math.round(value)}+`;
+  };
+  const runCounter = (node) => {
+    const target = Number(node.dataset.target || 0);
+    const start = performance.now();
+    const duration = 1400;
+    const tick = (now) => {
+      const progress = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      node.textContent = formatValue(target * eased, target);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach(runCounter);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || entry.target.dataset.counted) return;
+      entry.target.dataset.counted = "true";
+      runCounter(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach((counter) => observer.observe(counter));
+}
+
 function syncThemeToggle() {
   const theme = localStorage.getItem("cci-theme") || "dark";
   const lightMode = theme === "light";
@@ -213,6 +249,7 @@ async function loadSite() {
   renderSite(site);
   initScrollReveal();
   initPremiumMotion();
+  initCounters();
 }
 
 async function submitRegistration(event) {
